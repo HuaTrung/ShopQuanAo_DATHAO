@@ -1,0 +1,5 @@
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\MODEL\bin\Debug\MODEL.dll
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\MODEL\bin\Debug\MODEL.pdb
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\MODEL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\MODEL\obj\Debug\MODEL.dll
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\MODEL\obj\Debug\MODEL.pdb

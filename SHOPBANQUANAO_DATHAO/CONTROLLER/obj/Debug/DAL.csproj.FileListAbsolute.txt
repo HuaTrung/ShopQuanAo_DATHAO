@@ -1,0 +1,6 @@
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\CONTROLLER\bin\Debug\CONTROLLER.dll
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\CONTROLLER\bin\Debug\CONTROLLER.pdb
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\CONTROLLER\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\CONTROLLER\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\CONTROLLER\obj\Debug\CONTROLLER.dll
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\CONTROLLER\obj\Debug\CONTROLLER.pdb

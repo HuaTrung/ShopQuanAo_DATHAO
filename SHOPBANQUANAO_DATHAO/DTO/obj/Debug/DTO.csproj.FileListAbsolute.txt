@@ -1,0 +1,6 @@
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\DTO\bin\Debug\DTO.dll
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\DTO\bin\Debug\DTO.pdb
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\DTO\obj\Debug\DTO.dll
+C:\Users\user\source\repos\SHOPBANQUANAO_DATHAO\DTO\obj\Debug\DTO.pdb
