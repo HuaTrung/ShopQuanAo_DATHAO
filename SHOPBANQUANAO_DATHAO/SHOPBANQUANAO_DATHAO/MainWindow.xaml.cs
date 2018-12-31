@@ -1,5 +1,4 @@
 ﻿using MahApps.Metro.Controls;
-
 namespace WpfApplication
 {
     public partial class MainWindow : MetroWindow
@@ -7,6 +6,8 @@ namespace WpfApplication
         public MainWindow()
         {
             InitializeComponent();
+
+           // BLL_TaiDanhSachHangHoa();
         }
     }
 }

@@ -2,10 +2,76 @@
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                      xmlns:local="clr-namespace:SHOPBANQUANAO_DATHAO"
+
                       Title="MainWindow"
-                      Height="600"
-                      Width="800">
+                      Height="750" Width="1250" WindowStartupLocation="CenterScreen" BorderThickness="1">
 
     <!-- your content -->
-
+    <dragablz:TabablzControl FixedHeaderCount="7" TabStripPlacement="Left" RenderTransformOrigin="1.13,0.502">
+        <dragablz:TabablzControl.ItemContainerStyle>
+            <Style TargetType="{x:Type dragablz:DragablzItem}" BasedOn="{StaticResource MaterialDesignDragableTabItemVerticalStyle}">
+                <Setter Property="Width" Value="150" />
+                <Setter Property="Height" Value="70" />
+            </Style>
+        </dragablz:TabablzControl.ItemContainerStyle>
+        <dragablz:TabablzControl.InterTabController>
+            <dragablz:InterTabController />
+        </dragablz:TabablzControl.InterTabController>
+        <TabItem x:Name="hang_hoa" VerticalAlignment="Center">
+            <TabItem.Header>
+                <Canvas>
+                    <iconPacks:PackIconMaterial Kind="Hanger" VerticalAlignment="Center" Foreground="White" Height="30" Width="30" Canvas.Left="-65" Canvas.Top="-15"/>
+                    <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="HÀNG HÓA" /></TextBlock>
+                </Canvas>
+            </TabItem.Header>
+            <local:HangHoa></local:HangHoa>
+            </TabItem>
+        <TabItem x:Name="bill" VerticalAlignment="Center">
+            <TabItem.Header>
+                <Canvas>
+                    <iconPacks:PackIconFontAwesome Kind="FileInvoiceDollarSolid" VerticalAlignment="Center" Foreground="White" Height="30" Width="30" Canvas.Left="-65" Canvas.Top="-15"/>
+                    <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="HÓA ĐƠN" /></TextBlock>
+                </Canvas>
+            </TabItem.Header>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">LOG WORK</TextBlock>
+        </TabItem>
+        <TabItem x:Name="nhan_vien" VerticalAlignment="Center">
+            <TabItem.Header>
+                <Canvas>
+                    <iconPacks:PackIconFontAwesome Kind="UserCircleSolid" VerticalAlignment="Center" Foreground="White" Height="30" Width="30" Canvas.Left="-65" Canvas.Top="-15"/>
+                    <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="NHÂN VIÊN" /></TextBlock>
+                </Canvas>
+            </TabItem.Header>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Looks Quite Nice</TextBlock>
+        </TabItem>
+        <TabItem x:Name="thong_ke" VerticalAlignment="Center">
+            <TabItem.Header>
+                <Canvas>
+                    <iconPacks:PackIconFontAwesome Kind="ChartBarSolid" VerticalAlignment="Center" Foreground="White" Height="30" Width="30" Canvas.Left="-65" Canvas.Top="-15"/>
+                    <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="THỐNG KÊ" /></TextBlock>
+                </Canvas>
+            </TabItem.Header>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Looks Quite Nice</TextBlock>
+        </TabItem>
+        <TabItem x:Name="quan_li" VerticalAlignment="Center">
+            <TabItem.Header>
+                <Canvas>
+                    <iconPacks:PackIconMaterial Kind="AccountSettingsVariant" VerticalAlignment="Center" Foreground="White" Height="35" Width="35" Canvas.Left="-65" Canvas.Top="-15"/>
+                    <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="QUẢN LÍ" /></TextBlock>
+                </Canvas>
+            </TabItem.Header>
+        </TabItem>
+        <TabItem x:Name="thiet_lap" VerticalAlignment="Center">
+            <TabItem.Header>
+                <Canvas>
+                    <iconPacks:PackIconFontAwesome Kind="CogsSolid" VerticalAlignment="Center" Foreground="White" Height="30" Width="30" Canvas.Left="-65" Canvas.Top="-15"/>
+                    <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="THIẾT LẬP" /></TextBlock>
+                </Canvas>
+            </TabItem.Header>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Looks Quite Nice</TextBlock>
+        </TabItem>
+    </dragablz:TabablzControl>
 </Controls:MetroWindow>
