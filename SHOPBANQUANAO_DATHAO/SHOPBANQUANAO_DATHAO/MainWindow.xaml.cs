@@ -7,7 +7,7 @@ namespace WpfApplication
         {
             InitializeComponent();
 
-           // BLL_TaiDanhSachHangHoa();
+
         }
     }
 }

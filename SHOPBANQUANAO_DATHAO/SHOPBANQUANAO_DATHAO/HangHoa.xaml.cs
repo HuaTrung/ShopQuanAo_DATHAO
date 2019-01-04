@@ -35,7 +35,13 @@ namespace SHOPBANQUANAO_DATHAO
         }
         public void TimKiemHangHoa_TextChanged(object sender, TextChangedEventArgs e)
         {
-            DanhSachHangHoa.DataContext = BLL_HangHoa.BLL_TimKiemThuoc(timkiemhanghoa.Text);
+            timkiemmahanghoa.Text = "";
+            DanhSachHangHoa.DataContext = BLL_HangHoa.BLL_TimKiemTenHangHoa(timkiemtenhanghoa.Text);
+        }
+        public void TimKiemMaHangHoa_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            timkiemtenhanghoa.Text = "";
+            DanhSachHangHoa.DataContext = BLL_HangHoa.BLL_TimKiemMaHangHoa(timkiemmahanghoa.Text);
         }
     }
 }

@@ -33,19 +33,47 @@ namespace CONTROLLER
             }
             return dt;
         }
-        public static DataTable DAL_TimKiemThuoc(String text)
+        public static DataTable DAL_TimKiemTenHangHoa(String text)
         {
             DataTable dt = new DataTable();
             try
             {
                 conn.Open();
-                String query = "call TimKiemHangHoa('" + text + "')"; ;
+                String query = "call TimKiemTenHangHoa('" + text + "')"; ;
                 if (text.Length == 0)
                 {
                     query = "call LayDanhSachHangHoa()";
                 }
                 MySqlCommand Command = new MySqlCommand(query, conn);
                // Command.ExecuteNonQuery();
+                MySqlDataAdapter SDA = new MySqlDataAdapter(Command);
+                SDA.Fill(dt);
+                conn.Close();
+            }
+            catch (MySqlException ex)
+            {
+
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+            return dt;
+        }
+
+        public static DataTable DAL_TimKiemMaHangHoa(String text)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                conn.Open();
+                String query = "call TimKiemMaHangHoa('" + text + "')"; ;
+                if (text.Length == 0)
+                {
+                    query = "call LayDanhSachHangHoa()";
+                }
+                MySqlCommand Command = new MySqlCommand(query, conn);
+                // Command.ExecuteNonQuery();
                 MySqlDataAdapter SDA = new MySqlDataAdapter(Command);
                 SDA.Fill(dt);
                 conn.Close();

@@ -10,6 +10,7 @@
                       Height="750" Width="1250" WindowStartupLocation="CenterScreen" BorderThickness="1">
 
     <!-- your content -->
+
     <dragablz:TabablzControl FixedHeaderCount="7" TabStripPlacement="Left" RenderTransformOrigin="1.13,0.502">
         <dragablz:TabablzControl.ItemContainerStyle>
             <Style TargetType="{x:Type dragablz:DragablzItem}" BasedOn="{StaticResource MaterialDesignDragableTabItemVerticalStyle}">
@@ -27,7 +28,7 @@
                     <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="HÀNG HÓA" /></TextBlock>
                 </Canvas>
             </TabItem.Header>
-            <local:HangHoa></local:HangHoa>
+            <local:HoaDon></local:HoaDon>
             </TabItem>
         <TabItem x:Name="bill" VerticalAlignment="Center">
             <TabItem.Header>
@@ -45,7 +46,7 @@
                     <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="NHÂN VIÊN" /></TextBlock>
                 </Canvas>
             </TabItem.Header>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Looks Quite Nice</TextBlock>
+            <local:NhanVien></local:NhanVien>
         </TabItem>
         <TabItem x:Name="thong_ke" VerticalAlignment="Center">
             <TabItem.Header>

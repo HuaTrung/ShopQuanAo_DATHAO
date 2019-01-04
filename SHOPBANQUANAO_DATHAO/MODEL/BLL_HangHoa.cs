@@ -13,9 +13,13 @@ namespace MODEL
         {
             return DAL_HangHoa.DAL_TaiDanhSachHangHoa();
         }
-        public static DataTable BLL_TimKiemThuoc(String text)
+        public static DataTable BLL_TimKiemTenHangHoa(String text)
         {
-            return DAL_HangHoa.DAL_TimKiemThuoc(text);
+            return DAL_HangHoa.DAL_TimKiemTenHangHoa(text);
+        }
+        public static DataTable BLL_TimKiemMaHangHoa(String text)
+        {
+            return DAL_HangHoa.DAL_TimKiemMaHangHoa(text);
         }
     }
 }
