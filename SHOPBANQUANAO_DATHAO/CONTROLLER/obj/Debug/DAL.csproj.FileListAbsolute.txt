@@ -15,3 +15,5 @@ C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER
 C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\obj\Debug\CONTROLLER.dll
 C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\obj\Debug\CONTROLLER.pdb
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\bin\Debug\DTO.dll
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\bin\Debug\DTO.pdb

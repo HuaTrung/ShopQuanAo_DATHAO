@@ -47,12 +47,17 @@
     <Compile Include="BLL_HangHoa.cs" />
     <Compile Include="BLL_HoaDon.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="BLL_KhachHang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CONTROLLER\DAL.csproj">
       <Project>{525e988e-3f5e-480d-be02-b8f894c31acc}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{e721bfcf-2f58-4b73-af17-79c4d9149151}</Project>
+      <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

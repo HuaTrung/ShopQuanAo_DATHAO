@@ -71,3 +71,5 @@ C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUA
 C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\obj\Debug\NhanVien.baml
 C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\obj\Debug\HoaDon.g.cs
 C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\obj\Debug\HoaDon.baml
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\obj\Debug\MatHang.g.cs
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\obj\Debug\MatHang.baml

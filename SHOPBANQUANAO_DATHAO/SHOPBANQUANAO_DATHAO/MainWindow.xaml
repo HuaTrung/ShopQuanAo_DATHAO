@@ -28,16 +28,16 @@
                     <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="HÀNG HÓA" /></TextBlock>
                 </Canvas>
             </TabItem.Header>
-            <local:HoaDon></local:HoaDon>
+            <local:HangHoa></local:HangHoa>
             </TabItem>
-        <TabItem x:Name="bill" VerticalAlignment="Center">
+        <TabItem x:Name="HoaDon" VerticalAlignment="Center">
             <TabItem.Header>
                 <Canvas>
                     <iconPacks:PackIconFontAwesome Kind="FileInvoiceDollarSolid" VerticalAlignment="Center" Foreground="White" Height="30" Width="30" Canvas.Left="-65" Canvas.Top="-15"/>
                     <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="HÓA ĐƠN" /></TextBlock>
                 </Canvas>
             </TabItem.Header>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">LOG WORK</TextBlock>
+            <local:HoaDon></local:HoaDon>
         </TabItem>
         <TabItem x:Name="nhan_vien" VerticalAlignment="Center">
             <TabItem.Header>

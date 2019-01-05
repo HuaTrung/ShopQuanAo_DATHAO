@@ -58,10 +58,17 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DAL_HangHoa.cs" />
     <Compile Include="DAL_HoaDon.cs" />
+    <Compile Include="DAL_KhachHang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{e721bfcf-2f58-4b73-af17-79c4d9149151}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
