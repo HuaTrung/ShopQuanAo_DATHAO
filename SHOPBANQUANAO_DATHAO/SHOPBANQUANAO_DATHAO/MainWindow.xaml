@@ -74,7 +74,7 @@
                 </Canvas>
             </TabItem.Header>
         </TabItem>
-        <TabItem x:Name="dang_xuat" VerticalAlignment="Center" MouseDown="dang_xuat_MouseDown">
+        <TabItem x:Name="dang_xuat" VerticalAlignment="Center">
             <TabItem.Header>
                 <Canvas>
                     <iconPacks:PackIconFontAwesome Kind="TimesSolid" VerticalAlignment="Center" Foreground="White" Height="30" Width="30" Canvas.Left="-65" Canvas.Top="-15"/>

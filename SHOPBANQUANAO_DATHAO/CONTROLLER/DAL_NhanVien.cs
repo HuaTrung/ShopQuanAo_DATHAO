@@ -88,7 +88,7 @@ namespace CONTROLLER
         public static int DAL_KiemtraDangNhap(String tdn, String mk)
         {
             String data = "0";
-            String query = "call KiemTraDangNhap( '" + tdn + "', '" + mk + "')";
+            String query = "call KiemTraDangNhap('" + tdn + "','" + mk + "')";
             try
             {
                 conn.Open();
