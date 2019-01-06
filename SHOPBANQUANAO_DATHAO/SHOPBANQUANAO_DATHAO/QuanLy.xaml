@@ -48,7 +48,6 @@
                                     <Grid Width="25"></Grid>
                                     <RadioButton x:Name="rTk"  VerticalAlignment="Center" GroupName="cv" Content="Thủ kho" />
                                     <Grid Width="25"></Grid>
-                                    <RadioButton x:Name="rAd"  VerticalAlignment="Center" GroupName="cv" Content="Admin" />
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <Label>Tên đăng nhập:</Label>
@@ -82,7 +81,7 @@
                                     <Grid Width="25"></Grid>
                                     <RadioButton x:Name="rbnvbh" VerticalAlignment="Center" GroupName="cv" Content="Nhân viên bán hàng" />
                                     <Grid Width="25"></Grid>
-                                    <RadioButton x:Name="rbad"  VerticalAlignment="Center" GroupName="cv" Content="Admin" />
+                                    <!--<RadioButton x:Name="rbad"  VerticalAlignment="Center" GroupName="cv" Content="Admin" />-->
                                     <Grid Width="25"></Grid>
                                     <RadioButton x:Name="rbtk" VerticalAlignment="Center" GroupName="cv" Content="Thủ kho" />
                                 </StackPanel>
