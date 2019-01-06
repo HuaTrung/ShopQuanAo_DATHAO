@@ -28,6 +28,7 @@ namespace SHOPBANQUANAO_DATHAO
         List<MatHang> ListHangHoa;
         bool choPhepThemhang;
         private KhachHang khachhang;
+        private bool isDtl;
         public HoaDon()
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace SHOPBANQUANAO_DATHAO
             hanghoadangmua.Children.Add(mathang);
             thong_tin_them1.Visibility = Visibility.Collapsed;
             thong_tin_them2.Visibility = Visibility.Collapsed;
+            dtl.Visibility = Visibility.Collapsed;
             PanelCMND.Visibility = Visibility.Collapsed;
             khachhang = null;
             choPhepThemhang = false;
@@ -59,7 +61,7 @@ namespace SHOPBANQUANAO_DATHAO
 
         }
 
-        private void thembenhnhan_Click(object sender, RoutedEventArgs e)
+        private void themhoadon_Click(object sender, RoutedEventArgs e)
         {
             frmlaphoadon.IsOpen = true;
             DanhSachHangHoa_HoaDon.DataContext = BLL_HangHoa.BLL_TaiDanhSachHangHoa();
@@ -189,6 +191,7 @@ namespace SHOPBANQUANAO_DATHAO
                     hdGioiTinh.Text = "Giới tính: ";
                     thong_tin_them1.Visibility = Visibility.Collapsed;
                     thong_tin_them2.Visibility = Visibility.Collapsed;
+                    dtl.Visibility = Visibility.Collapsed;
                     PanelCMND.Visibility = Visibility.Collapsed;
                 }
             }
@@ -202,11 +205,56 @@ namespace SHOPBANQUANAO_DATHAO
                 hdTen.Text = "Khách hàng: " + khachhang.Ten;
                 hdSDT.Text = "SĐT: "+khachhang.Sdt;
                 hdGioiTinh.Text = "Giới tính: " + khachhang.Gioitinh;
+                dtl.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                dtl.Visibility = Visibility.Collapsed;
             }
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+           
+            int tongtien = 0;
+            if (ListHangHoa.Count > 0)
+            {
+                if (isDtl)
+                {
+                    dtlText.Text = khachhang.Diem_tich_luy;
+                    tongtien = 0;
+                    foreach (var item in ListHangHoa)
+                    {
+                        try
+                        {
+                            tongtien += Convert.ToInt32(item.ThanhTien.Text);
+                        }
+                        catch (Exception ex)
+                        {
+                            return;
+                        }
+                    }
+                    tinhtong.Text = tongtien.ToString();
+                    tinhtong.Text = (Convert.ToInt32(tinhtong.Text.ToString()) - Convert.ToInt32(khachhang.Diem_tich_luy)*1000).ToString();
+                }
+                else
+                {
+                    dtlText.Text = "0";
+                    tongtien = 0;
+                    foreach (var item in ListHangHoa)
+                    {
+                        try
+                        {
+                            tongtien += Convert.ToInt32(item.ThanhTien.Text);
+                        }
+                        catch (Exception ex)
+                        {
+                            return;
+                        }
+                    }
+                    tinhtong.Text = tongtien.ToString();
+                }
+            }
             tienthua.Text = (Convert.ToInt32(tienkhach.Text) - Convert.ToInt32(tinhtong.Text)).ToString();
         }
 
@@ -219,10 +267,24 @@ namespace SHOPBANQUANAO_DATHAO
                 listCTHD.Add(temp);
             }
             DTO.HoaDon hoadon = null;
-            if (khachhang==null)
-                hoadon = new DTO.HoaDon(null, tinhtong.Text, DateTime.Today.ToString("dd,MM,yyyy"), "1", "1");
+
+
+            if (khachhang == null)
+                hoadon = new DTO.HoaDon(null, tinhtong.Text, DateTime.Today.ToString("dd,MM,yyyy"), "1", hinhthucthanhtoan.SelectedIndex.ToString(), "0");
             else
-                hoadon = new DTO.HoaDon(khachhang.Cmnd, tinhtong.Text, DateTime.Today.ToString("dd,MM,yyyy"), "1", "1");
+            {
+                String dtlkh = "";
+                if(isDtl)
+                {
+                    dtlkh = khachhang.Diem_tich_luy;
+                }
+                else
+                {
+                    dtlkh = "0";
+                }
+                hoadon = new DTO.HoaDon(khachhang.Cmnd, tinhtong.Text, DateTime.Today.ToString("dd,MM,yyyy"), "1", hinhthucthanhtoan.SelectedIndex.ToString(), dtlkh);
+            }
+
             BLL_HoaDon.BLL_LapHoaDon(hoadon, listCTHD);
             try
             {
@@ -256,6 +318,54 @@ namespace SHOPBANQUANAO_DATHAO
             choPhepThemhang = false;
             hdInputHoTen.SelectedIndex = 0;
             TaiDanhSachHoaDon();
+        }
+
+        private void dtl_Click(object sender, RoutedEventArgs e)
+        {
+            isDtl = !isDtl;
+            if (isDtl)
+                dtl.Content = "KHÔNG SỬ DỤNG ĐTL";
+            else
+                dtl.Content = "SỬ DỤNG ĐIỂM TÍCH LŨY";
+            int tongtien = 0;
+            if (ListHangHoa.Count > 0)
+            {
+                if (isDtl)
+                {
+                    dtlText.Text = khachhang.Diem_tich_luy;
+                    tongtien = 0;
+                    foreach (var item in ListHangHoa)
+                    {
+                        try
+                        {
+                            tongtien += Convert.ToInt32(item.ThanhTien.Text);
+                        }
+                        catch(Exception ex)
+                        {
+                            return;
+                        }
+                    }
+                    tinhtong.Text = tongtien.ToString();
+                    tinhtong.Text = (Convert.ToInt32(tinhtong.Text.ToString()) - Convert.ToInt32(khachhang.Diem_tich_luy)*1000).ToString();
+                }
+                else
+                {
+                    dtlText.Text = "0";
+                    tongtien = 0;
+                    foreach (var item in ListHangHoa)
+                    {
+                        try
+                        {
+                            tongtien += Convert.ToInt32(item.ThanhTien.Text);
+                        }
+                        catch (Exception ex)
+                        {
+                            return;
+                        }
+                    }
+                    tinhtong.Text = tongtien.ToString();
+                }
+            }
         }
     }
 }

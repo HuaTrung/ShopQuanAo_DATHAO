@@ -33,5 +33,28 @@ namespace CONTROLLER
             }
             return dt;
         }
+
+        public static DataTable DAL_BaoCaoTonKho(String loai)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                conn.Open();
+                MySqlCommand Command = new MySqlCommand("call BaoCaoTonKho("+loai+")", conn);
+                // Command.ExecuteNonQuery();
+                MySqlDataAdapter SDA = new MySqlDataAdapter(Command);
+                SDA.Fill(dt);
+                conn.Close();
+            }
+            catch (MySqlException ex)
+            {
+
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+            return dt;
+        }
     }
 }

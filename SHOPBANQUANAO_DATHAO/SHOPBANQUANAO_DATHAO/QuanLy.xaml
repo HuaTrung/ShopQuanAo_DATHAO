@@ -150,8 +150,9 @@
                         <local:DoanhThu></local:DoanhThu>
                     </TabItem>
                     <TabItem Header="Thống kê">
+                        <local:TonKho></local:TonKho>
                     </TabItem>
-
+                    
                 </dragablz:TabablzControl>
             </TabItem>
             

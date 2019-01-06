@@ -22,29 +22,11 @@
                 <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Foreground="#2196F3" HorizontalAlignment="Center" FontSize="15" Text="BÁO CÁO TỒN KHO"/>
             </materialDesign:Card>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Margin="50,0,0,0" FontSize="15"  Foreground="#1565C0" FontWeight="DemiBold" VerticalAlignment="Center">Loại báo cáo:</TextBlock>
-                <ComboBox Foreground="#1565C0" x:Name="loaibaocao" FontSize="15" Width="70">
-                    <ComboBoxItem  Foreground="#1565C0">Theo ngày của tháng</ComboBoxItem>
-                    <ComboBoxItem  Foreground="#1565C0">Chi tiết</ComboBoxItem>
-                </ComboBox>
                 <StackPanel Margin="50,0,10,0" Orientation="Horizontal">
-                    <Label Foreground="#1565C0"  FontSize="14">Tháng:</Label>
-                    <ComboBox Foreground="#1565C0" x:Name="doanhthu_thang" Width="71" SelectedIndex="0" FontSize="14">
-                        <ComboBoxItem>Tháng 1</ComboBoxItem>
-                        <ComboBoxItem>Tháng 2</ComboBoxItem>
-                        <ComboBoxItem>Tháng 3</ComboBoxItem>
-                        <ComboBoxItem>Tháng 4</ComboBoxItem>
-                        <ComboBoxItem>Tháng 5</ComboBoxItem>
-                        <ComboBoxItem>Tháng 6</ComboBoxItem>
-                        <ComboBoxItem>Tháng 7</ComboBoxItem>
-                        <ComboBoxItem>Tháng 8</ComboBoxItem>
-                        <ComboBoxItem>Tháng 9</ComboBoxItem>
-                        <ComboBoxItem>Tháng 10</ComboBoxItem>
-                        <ComboBoxItem>Tháng 11</ComboBoxItem>
-                        <ComboBoxItem>Tháng 12</ComboBoxItem>
+                    <Label Foreground="#1565C0"  FontSize="14">Loại Hàng:</Label>
+                    <ComboBox Foreground="#1565C0" x:Name="loaiHang" Width="71" SelectedIndex="0" FontSize="14">
+
                     </ComboBox>
-                    <Label Margin="20,0,0,0" Foreground="#1565C0" Canvas.Left="245" Canvas.Top="74" FontSize="14">Năm:</Label>
-                    <TextBox x:Name="doanhthu_nam" Foreground="#1565C0" Canvas.Left="293" Canvas.Top="74" FontSize="14" Width="53"></TextBox>
                 </StackPanel>
             </StackPanel>
 
@@ -54,7 +36,7 @@
                         <iconPacks:PackIconMaterial Kind="ChartBar" VerticalAlignment="Center" Foreground="white"  Height="22" Width="22"/>
                     </StackPanel>
                 </Button>
-                <Button Margin="50,0,0,0" x:Name="xuatexcel_tonkho" Padding="-100" Height="35" Width="35" ToolTip="XUẤT EXCEL">
+                <Button Margin="50,0,0,0" x:Name="xuatexcel_tonkho" Padding="-100" Height="35" Width="35" ToolTip="XUẤT EXCEL" Click="xuatexcel_tonkho_Click">
                     <StackPanel>
                         <iconPacks:PackIconFontAwesome Kind="FileExcelSolid" VerticalAlignment="Center" Foreground="white"  Height="25" Width="25"/>
                     </StackPanel>
@@ -62,30 +44,26 @@
             </StackPanel>
             <TextBlock x:Name="ketquadoanhthu" Foreground="#1565C0" FontSize="15"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-            </Grid>
-            <DataGrid Grid.Column="0" AutoGenerateColumns="False" Style="{StaticResource AzureDataGrid}" Height="411"
-                        x:Name="baocaodoanhthutheongay" ItemsSource="{Binding}" GridLinesVisibility="All"
-                        CanUserResizeRows="False" RowHeight ="40" CanUserAddRows="false" HorizontalAlignment="Left">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
+            
+            <DataGrid AutoGenerateColumns="False" Style="{StaticResource AzureDataGrid}" Height="411"
+                        x:Name="baocaodoanhthu" ItemsSource="{Binding}" GridLinesVisibility="All"
+                        CanUserResizeRows="False" RowHeight ="40" CanUserAddRows="false" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Path=ngaylap}" Header="NGÀY" Width="150"
+                    <DataGridTextColumn Binding="{Binding Path=STT}" Header="STT" Width="50"
                                 IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=sogiaodich}" Header="SỐ GIAO DỊCH" Width="150"
+                    <DataGridTextColumn Binding="{Binding Path=mahang}" Header="MÃ HÀNG" Width="150"
                                 IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=doanhthu}" Header="DOANH THU" Width="120"
+                    <DataGridTextColumn Binding="{Binding Path=tenhang}" Header="TÊN HÀNG" Width="120"
                                 IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=tyle}" Header="TỶ LỆ" Width="70" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=soluong}" Header="SỐ LƯỢNG" Width="90" IsReadOnly="True" />
                 </DataGrid.Columns>
             </DataGrid>
-            <chartingToolkit:Chart Margin="50,0,0,0" Grid.Column="1" x:Name="pieChart" VerticalAlignment="Top" Height="350" Width="461">
-                <chartingToolkit:PieSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True" />
-            </chartingToolkit:Chart>
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock x:Name="ketqua" FontWeight="DemiBold" FontSize="20" Foreground="#1565C0"></TextBlock>
+            </StackPanel>
         </StackPanel>
+        
 
     </Grid>
 
