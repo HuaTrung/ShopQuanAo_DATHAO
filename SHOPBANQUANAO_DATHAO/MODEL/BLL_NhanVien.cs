@@ -60,5 +60,11 @@ namespace MODEL
             return DAL_NhanVien.DAL_KiemtraDangNhap(tdn,mk);
         }
         
+
+
+        public static int YeuCauThemCong(String id, String ngay, int soGio)
+        {
+            return DAL_NhanVien.YeuCauThemCong(id, ngay, soGio);
+        }
     }
 }

@@ -158,7 +158,7 @@ namespace SHOPBANQUANAO_DATHAO
                     {
                         MessageBox.Show("Không được thêm công lớn hơn ngày hiện tại", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
                     }
-                    else
+                    else if(dt1 == dt2)
                     {
                         if (tbHour.IsEnabled == false)
                         {
@@ -176,6 +176,20 @@ namespace SHOPBANQUANAO_DATHAO
                             {
                                 MessageBox.Show("Thêm thất bại", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
                             }
+                        }
+                    }
+                    else // create request and send to admin eccept to change data
+                    {
+                        // we need iduser 
+                        // query = "call procedure(parametter)"
+                        int i = BLL_NhanVien.YeuCauThemCong(nv.Id_nhanvien, dpicker.Text, Int32.Parse(tbHour.Text));
+                        if(i == 1)
+                        {
+                            MessageBox.Show("ĐÃ gửi yêu cầu thêm công trong quá khứ cho quản lý", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                        } 
+                        else
+                        {
+                            MessageBox.Show("Gửi yêu cầu thêm công thất bại", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
                         }
                     }
                 }

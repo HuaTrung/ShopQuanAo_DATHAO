@@ -57,7 +57,7 @@
                                 <Grid Height="30"></Grid>
                             </StackPanel>
                         </TabItem>
-                        <TabItem Header="Cập nhật">
+                        <TabItem Header="Thêm - Xóa - Sửa">
                             <StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <Label>Tên nhân viên:</Label>
@@ -86,13 +86,14 @@
                                     <Grid Width="25"></Grid>
                                     <RadioButton x:Name="rbtk" VerticalAlignment="Center" GroupName="cv" Content="Thủ kho" />
                                 </StackPanel>
-                                <StackPanel x:Name="stktdn" Orientation="Horizontal">
+                                <StackPanel Orientation="Horizontal">
                                     <Label>Tên đăng nhập:</Label>
                                     <TextBox TextChanged="search_TextChanged" x:Name="tbuTenDN" Width="130"/>
                                     <Grid Width="25"></Grid>
                                     <Label>Mật khẩu: </Label>
                                     <TextBox x:Name="tbumk" Width="120"></TextBox>
-                                    <Button Click="Button_Click_1">Cập nhật mật khẩu</Button>
+
+                                    <Button x:Name="stktdn" Click="Button_Click_1">Cập nhật mk</Button>
                                 </StackPanel>
                                 <StackPanel x:Name="stknc" Orientation="Horizontal">
                                     <Label>Ngày sửa công</Label>
@@ -106,16 +107,20 @@
                                 </StackPanel>
                                 <Grid Height="10"></Grid>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button x:Name="btnthem" Click="btnthem_Click">Thêm</Button>
+                                    <Grid Width="10" />
                                     <Button x:Name="btncapnhat" Click="btnCapNhatNhanVien">Cập nhật</Button>
                                     <Grid Width="10" />
                                     <Button x:Name="btnxoa" Click="btnXoaNhanvien">Xóa</Button>
+                                    <Grid  Width="10"></Grid>
+                                    <Button Click="Button_Click_2">X</Button>
                                 </StackPanel>
                             </StackPanel>
                         </TabItem>
                     </TabControl>
                     <StackPanel>
                         <Label FontSize="25" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center">Thông tin nhân viên</Label>
-                        <DataGrid Height="400" x:Name="dgNhanvien" AutoGenerateColumns="False" ItemsSource="{Binding}">
+                        <DataGrid Height="240" x:Name="dgNhanvien" AutoGenerateColumns="False" ItemsSource="{Binding}">
                             <DataGrid.ItemContainerStyle>
                                 <Style TargetType="DataGridRow">
                                     <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick" />
@@ -155,7 +160,26 @@
                     
                 </dragablz:TabablzControl>
             </TabItem>
-            
+            <TabItem Header="Yêu cầu">
+                <StackPanel>
+                    <DataGrid Height="240" x:Name="DanhSachYeuCau" AutoGenerateColumns="False" ItemsSource="{Binding}">
+                        <DataGrid.ItemContainerStyle>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick_1" />
+                            </Style>
+                        </DataGrid.ItemContainerStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=id}" Header="MÃ YÊU CẦU" Width="auto"
+                                IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding Path=id_nv}" Header="MÃ NHÂN VIÊN" Width="auto"
+                                IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding Path=noi_dung_query}" Header="Nội Dung" Width="auto"
+                                IsReadOnly="True" />
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
         </TabControl>
     </StackPanel>
 </UserControl>

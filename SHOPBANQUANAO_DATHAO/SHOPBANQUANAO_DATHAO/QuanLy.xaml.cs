@@ -45,7 +45,7 @@ namespace SHOPBANQUANAO_DATHAO
             btncapnhat.IsEnabled = false;
             btnxoa.IsEnabled = false;
             stkhl.IsEnabled = stknc.IsEnabled = stktdn.IsEnabled = false;
-
+            loadYeuCau();
         }
 
         private void search_TextChanged(object sender, TextChangedEventArgs e)
@@ -54,6 +54,11 @@ namespace SHOPBANQUANAO_DATHAO
                 dgNhanvien.DataContext = BLL_QuanLy.SearchNhanVien(tbTenNv.Text, tbTenDN.Text, dpNgaySinh.Text, "", tbDiaChi.Text, "");
             else
                 dgNhanvien.DataContext = BLL_QuanLy.SearchNhanVien(tbTenNv.Text, tbTenDN.Text, "", "", tbDiaChi.Text, "");
+        }
+
+        void loadYeuCau()
+        {
+            DanhSachYeuCau.DataContext = BLL_QuanLy.LoadYeuCau();
         }
 
         private void btngGenderCheck(object sender, RoutedEventArgs e)
@@ -205,6 +210,8 @@ namespace SHOPBANQUANAO_DATHAO
             stkhl.IsEnabled = stknc.IsEnabled = stktdn.IsEnabled = true;
             btncapnhat.IsEnabled = true;
             btnxoa.IsEnabled = true;
+            btnthem.IsEnabled = false;
+            rbad.IsEnabled = true;
 
         }
 
@@ -259,6 +266,98 @@ namespace SHOPBANQUANAO_DATHAO
                     {
                         MessageBox.Show("Cập nhật mật khẩu thất bại", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
                     }
+                }
+            }
+        }
+
+        private void btnthem_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Bạn có muốn thêm nhân viên ?",
+                                        "Confirmation",
+                                        MessageBoxButton.YesNo,
+                                        MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                if (dpuNgaySinh.Text =="" || tbuTenNv.Text.Trim() == "" || tbuDiaChi.Text.Trim() == "" || tbuTenDN.Text.Trim() == "" || tbumk.Text.Trim() == "")
+                {
+                    MessageBox.Show("Xin hãy điền đầy đủ thông tin để thêm nhân viên", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                }
+                else
+                {
+                    String gt = "NAM";
+                    if (rbNu.IsChecked == true)
+                        gt = "NỮ";
+
+                    String cv = "NHÂN VIÊN BÁN HÀNG";
+                    if (rbtk.IsChecked == true)
+                        cv = "THỦ KHO";
+
+                    int i =  BLL_QuanLy.ThemNhanVien(tbuTenNv.Text, dpuNgaySinh.Text, gt, tbuDiaChi.Text, cv, tbumk.Text, tbuTenDN.Text);
+                    if (i == 1)
+                    {
+                        MessageBox.Show("Thêm nhân viên thành công", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                        loadNhanVien();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm nhân viên thất bại", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    }
+                }
+
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            btnthem.IsEnabled = true;
+            btnxoa.IsEnabled = false;
+            btncapnhat.IsEnabled = false;
+            stktdn.IsEnabled = false;
+            stkhl.IsEnabled = false;
+            stknc.IsEnabled = true;
+            idUpdate = "";
+            rbad.IsEnabled = false;
+        }
+
+        private void DataGridRow_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Yes: Thực hiện , No: Xóa",
+                                      "Confirmation",
+                                      MessageBoxButton.YesNoCancel,
+                                      MessageBoxImage.Question);
+            if(result == MessageBoxResult.Yes)
+            {
+                DataRowView row = (DataRowView)DanhSachYeuCau.SelectedItems[0];
+                String id = row["id"].ToString();
+
+                int i = BLL_QuanLy.ThucHienYeuCau(id);
+
+                if (i == 1)
+                {
+                    MessageBox.Show("Thực hiện thành công", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    loadYeuCau();
+                }
+                else
+                {
+                    MessageBox.Show("Thực hiện thất bại", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                }
+
+            } else if(result == MessageBoxResult.No)
+            {
+                DataRowView row = (DataRowView)DanhSachYeuCau.SelectedItems[0];
+                String id = row["id"].ToString();
+
+                int i = BLL_QuanLy.XoaYeuCau(id);
+
+                if (i == 1)
+                {
+                    MessageBox.Show("Xoa thành công", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    loadYeuCau();
+                }
+                else
+                {
+                    MessageBox.Show("Xoa thất bại", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 }
             }
         }
