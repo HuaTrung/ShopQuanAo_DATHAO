@@ -54,7 +54,7 @@
                         <iconPacks:PackIconMaterial Kind="Key" VerticalAlignment="Center" Foreground="white"  Height="22" Width="22"/>
                     </StackPanel>
                 </Button>
-                <Button Margin="50,0,0,0" x:Name="xuatexcel_doanhthu" Padding="-100" Height="35" Width="35" ToolTip="XUẤT EXCEL" >
+                <Button Margin="50,0,0,0" x:Name="xuatexcel_doanhthu" Padding="-100" Height="35" Width="35" ToolTip="XUẤT EXCEL" Click="xuatexcel_Click">
                     <StackPanel>
                         <iconPacks:PackIconMaterial Kind="Key" VerticalAlignment="Center" Foreground="white"  Height="22" Width="22"/>
                     </StackPanel>

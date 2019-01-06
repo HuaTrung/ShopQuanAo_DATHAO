@@ -47,7 +47,8 @@ namespace CONTROLLER
                        + hd.Tong_tien + "','"
                        + hd.Ngay_lap + "','"
                        + hd.Idnhan_vien + "',"
-                       + hd.Hinh_thuc_thanh_toan + ")", conn);
+                       + hd.Hinh_thuc_thanh_toan +"','"
+                       +hd.Dtl+")", conn);
 
                 }
                 else
@@ -56,7 +57,8 @@ namespace CONTROLLER
                   + hd.Tong_tien + "','"
                   + hd.Ngay_lap + "','"
                   + hd.Idnhan_vien + "',"
-                  + hd.Hinh_thuc_thanh_toan + ")", conn);
+                  + hd.Hinh_thuc_thanh_toan + "','"
+                       + hd.Dtl + ")", conn);
 
                 }
                 MySqlDataReader myReader = Command.ExecuteReader();

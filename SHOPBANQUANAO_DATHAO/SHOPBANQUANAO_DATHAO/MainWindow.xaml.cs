@@ -1,4 +1,5 @@
 ﻿using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 namespace WpfApplication
 {
     public partial class MainWindow : MetroWindow
@@ -6,8 +7,7 @@ namespace WpfApplication
         public MainWindow()
         {
             InitializeComponent();
-
-
+            
         }
     }
 }

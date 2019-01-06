@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MODEL;
 using System.Data;
+using MODEL;
+using DTO;
 using Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop;
 using System.Windows.Forms;
@@ -21,34 +22,23 @@ using System.Windows.Forms;
 namespace SHOPBANQUANAO_DATHAO
 {
     /// <summary>
-    /// Interaction logic for DoanhThu.xaml
+    /// Interaction logic for TonKho.xaml
     /// </summary>
-    public partial class DoanhThu : System.Windows.Controls.UserControl
+    public partial class TonKho : System.Windows.Controls.UserControl
     {
-        public DoanhThu()
+        public TonKho()
         {
             InitializeComponent();
+            loaiHang.Items.Add("Tất cả");
+            foreach (string item in BLL_HangHoa.BLL_TaiLoaiHang())
+                loaiHang.Items.Add(item.ToString());
         }
 
-        private void loadbaocaodoanhthutheongay_Click(object sender, RoutedEventArgs e)
+        private void loadbaocaotonthu_Click(object sender, RoutedEventArgs e)
         {
-            System.Data.DataTable dt = BLL_BaoCao.BLL_BaoCaoDoanhThuTheoNgay(doanhthu_thang.Text.Substring(6), doanhthu_nam.Text);
-            baocaodoanhthutheongay.DataContext = dt;
-
-            List<KeyValuePair<string, double>> valueList = new List<KeyValuePair<string, double>>();
-
-            foreach (DataRow row in dt.Rows)
-            {
-<<<<<<< HEAD
-                string a = row["ngaylap"].ToString();
-                double b = Convert.ToDouble(row["doanhthu"].ToString());//.Substring(0, row["doanhthu"].ToString().Length - 1));
-                valueList.Add(new KeyValuePair<string, double>(row["ngaylap"].ToString(), b));
-=======
-                valueList.Add(new KeyValuePair<string, double>(row["ngaylap"].ToString(), Convert.ToDouble(row["doanhthu"].ToString())));
->>>>>>> 76c21a0d23f4e9bf80792b3b73dd890e99b1d222
-            }
-            pieChart.Title="Báo cáo doanh thu theo tháng" + doanhthu_thang.Text.Substring(doanhthu_thang.Text.Length - 1)+" năm " + doanhthu_nam.Text;
-            pieChart.DataContext = valueList;
+            System.Data.DataTable dt = BLL_BaoCao.BLL_BaoCaoTonKho(loaiHang.SelectedIndex.ToString());
+            baocaodoanhthu.DataContext=dt;
+            ketqua.Text = "Có : "+dt.Rows.Count.ToString() +" kết quả trả về";
         }
         private void xuatExcel()
         {
@@ -71,14 +61,14 @@ namespace SHOPBANQUANAO_DATHAO
         {
             System.Data.DataTable datatableMain = new System.Data.DataTable();
             System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
-            Microsoft.Office.Interop.Excel.Application oExcel= new Microsoft.Office.Interop.Excel.Application();
-            Workbook oBook= oExcel.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel.Application oExcel = new Microsoft.Office.Interop.Excel.Application();
+            Workbook oBook = oExcel.Workbooks.Add(Type.Missing);
             Worksheet oSheet = oBook.Worksheets[1];
             int colIndex = 0;
             int rowIndex = 0;
-            datatableMain = BLL_BaoCao.BLL_BaoCaoDoanhThuTheoNgay(doanhthu_thang.Text.Substring(6), doanhthu_nam.Text);
+            datatableMain = BLL_BaoCao.BLL_BaoCaoTonKho(loaiHang.SelectedValue.ToString());
             // Export the Columns to excel file
- 
+
             foreach (DataColumn dc in datatableMain.Columns)
             {
                 colIndex = (colIndex + 1);
@@ -131,7 +121,7 @@ namespace SHOPBANQUANAO_DATHAO
             }
         }
 
-        private void xuatexcel_Click(object sender, RoutedEventArgs e)
+        private void xuatexcel_tonkho_Click(object sender, RoutedEventArgs e)
         {
             xuatExcel();
         }

@@ -13,5 +13,10 @@ namespace MODEL
         {
             return DAL_BaoCao.DAL_BaoCaoDoanhThuTheoNgay(m,y);
         }
+
+        public static DataTable BLL_BaoCaoTonKho(String loai)
+        {
+            return DAL_BaoCao.DAL_BaoCaoTonKho(loai);
+        }
     }
 }

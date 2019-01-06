@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              Width="auto"
              Height="auto">
-    <Grid HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Stretch" Width="auto" Margin="0">
+    <Grid  HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Stretch" Width="auto">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="12*" />
@@ -16,7 +16,7 @@
         <DockPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#2196F3" d:IsLocked="True">
             <Label x:Name="labelnhanvien" FontSize="32" Foreground="white"/>
         </DockPanel>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>

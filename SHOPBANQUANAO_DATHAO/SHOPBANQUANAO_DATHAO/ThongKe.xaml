@@ -46,7 +46,7 @@
             </Button>
             <Button x:Name="xuatexcel_doanhthu" RenderTransformOrigin="4.147,12.781" Canvas.Left="462" Canvas.Top="100"  Height="35" Width="35" ToolTip="XUẤT EXCEL" >
                 <Canvas>
-                    <Image Width="40" Height="40" Canvas.Left="-17" Canvas.Top="-20" Source="Images/Excel-Export.png"/>
+                    <iconPacks:PackIconMaterial Kind="Key" VerticalAlignment="Center" Foreground="#707070" Height="22" Width="22"/>
                 </Canvas>
             </Button>
             <TextBlock x:Name="ketquadoanhthu" Foreground="#1565C0" FontSize="15" Canvas.Left="42" Canvas.Top="129" />

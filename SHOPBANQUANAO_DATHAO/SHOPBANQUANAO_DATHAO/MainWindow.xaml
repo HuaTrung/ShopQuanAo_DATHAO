@@ -28,7 +28,7 @@
                     <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="HÀNG HÓA" /></TextBlock>
                 </Canvas>
             </TabItem.Header>
-            <local:QuanLy></local:QuanLy>
+            <local:HangHoa></local:HangHoa>
             </TabItem>
         <TabItem x:Name="HoaDon" VerticalAlignment="Center">
             <TabItem.Header>
@@ -52,10 +52,10 @@
             <TabItem.Header>
                 <Canvas>
                     <iconPacks:PackIconFontAwesome Kind="ChartBarSolid" VerticalAlignment="Center" Foreground="White" Height="30" Width="30" Canvas.Left="-65" Canvas.Top="-15"/>
-                    <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="THỐNG KÊ" /></TextBlock>
+                    <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="KIỂM KHO" /></TextBlock>
                 </Canvas>
             </TabItem.Header>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Looks Quite Nice</TextBlock>
+            <local:KhoHang></local:KhoHang>
         </TabItem>
         <TabItem x:Name="quan_li" VerticalAlignment="Center">
             <TabItem.Header>
@@ -64,6 +64,7 @@
                     <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="QUẢN LÍ" /></TextBlock>
                 </Canvas>
             </TabItem.Header>
+            <local:QuanLy></local:QuanLy>
         </TabItem>
         <TabItem x:Name="thiet_lap" VerticalAlignment="Center">
             <TabItem.Header>
@@ -72,7 +73,6 @@
                     <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="THIẾT LẬP" /></TextBlock>
                 </Canvas>
             </TabItem.Header>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Looks Quite Nice</TextBlock>
         </TabItem>
     </dragablz:TabablzControl>
 </Controls:MetroWindow>
