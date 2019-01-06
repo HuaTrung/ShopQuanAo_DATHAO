@@ -30,7 +30,6 @@ E:\github\quan ao\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\bi
 E:\github\quan ao\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\bin\Debug\MaterialDesignColors.dll
 E:\github\quan ao\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\bin\Debug\MaterialDesignThemes.Wpf.dll
 E:\github\quan ao\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\bin\Debug\MODEL.dll
-E:\github\quan ao\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\bin\Debug\MySql.Data.dll
 E:\github\quan ao\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
 E:\github\quan ao\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\bin\Debug\System.Windows.Controls.Input.Toolkit.dll
 E:\github\quan ao\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\bin\Debug\System.Windows.Controls.Layout.Toolkit.dll

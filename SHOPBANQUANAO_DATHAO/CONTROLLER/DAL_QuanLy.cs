@@ -120,5 +120,23 @@ namespace CONTROLLER
             String q = "call ThemNhanVien ('" + nv.Ten_nhanvien + "','" + nv.Ngay_sinh + "','" + nv.Gioi_tinh + "','" + nv.Dia_chia + "','" + nv.Ma_chuc_vu + "','" + nv.Mat_khau + "','" + nv.Ten_dang_nhap + "')";
             return DataTransfer.Instance.ExecuteNonQuerrypRO(q);
         }
+
+        public static DataTable LoadYeuCau()
+        {
+            String q = "select id, id_nv, noi_dung_query, tinh_trang from yeu_cau where tinh_trang = 0";
+            return DataTransfer.Instance.ExecuteQuerry(q);
+        }
+
+        public static int ThucHienYeuCau(String id)
+        {
+            String q = "call ThucHienYeuCau( '"+ id +"')";
+            return DataTransfer.Instance.ExecuteNonQuerrypRO(q);
+        }
+
+        public static int XoaYeuCau(String id)
+        {
+            String q = "call XoaYeuCau( '" + id + "')";
+            return DataTransfer.Instance.ExecuteNonQuerrypRO(q);
+        }
     }
 }

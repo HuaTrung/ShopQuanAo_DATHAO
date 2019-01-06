@@ -23,10 +23,8 @@ DROP TABLE IF EXISTS `tham_so`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `tham_so` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_nv` varchar(10) NOT NULL,
-  `phan_tram` varchar(5) NOT NULL,
-  PRIMARY KEY (`id`)
+  `soYeuCau` int(11) NOT NULL DEFAULT '0',
+  `phan_tram` int(5) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -36,6 +34,7 @@ CREATE TABLE `tham_so` (
 
 LOCK TABLES `tham_so` WRITE;
 /*!40000 ALTER TABLE `tham_so` DISABLE KEYS */;
+INSERT INTO `tham_so` VALUES (10,10);
 /*!40000 ALTER TABLE `tham_so` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +47,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-06 21:43:56
+-- Dump completed on 2019-01-07  1:48:14

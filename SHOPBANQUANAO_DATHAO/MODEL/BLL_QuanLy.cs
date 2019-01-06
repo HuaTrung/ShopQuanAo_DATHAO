@@ -55,7 +55,21 @@ namespace MODEL
             return DAL_QuanLy.ThemNhanVien(nv);
         }
 
-      
+        public static DataTable LoadYeuCau()
+        {
+            return DAL_QuanLy.LoadYeuCau();
+        }
+
+        public static int ThucHienYeuCau(String id)
+        {
+            return DAL_QuanLy.ThucHienYeuCau(id);
+        }
+
+        public static int XoaYeuCau(String id)
+        {
+            return DAL_QuanLy.XoaYeuCau(id);
+        }
+
     }
 }
 

@@ -28,7 +28,7 @@ CREATE TABLE `bang_cham_cong` (
   `so_gio` int(11) DEFAULT NULL,
   `ngay` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`idbang_cham_cong`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `bang_cham_cong` (
 
 LOCK TABLES `bang_cham_cong` WRITE;
 /*!40000 ALTER TABLE `bang_cham_cong` DISABLE KEYS */;
-INSERT INTO `bang_cham_cong` VALUES (8,1,11,'1/6/2019');
+INSERT INTO `bang_cham_cong` VALUES (8,1,11,'1/6/2019'),(9,1,12,'1/1/2019'),(10,1,12,'1/1/2019');
 /*!40000 ALTER TABLE `bang_cham_cong` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-06 21:43:58
+-- Dump completed on 2019-01-07  1:48:18

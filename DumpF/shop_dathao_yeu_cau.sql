@@ -37,7 +37,7 @@ CREATE TABLE `yeu_cau` (
 
 LOCK TABLES `yeu_cau` WRITE;
 /*!40000 ALTER TABLE `yeu_cau` DISABLE KEYS */;
-INSERT INTO `yeu_cau` VALUES (8,'1','call ThemCong(\'1\',\'1/1/2019\', \'12\')',0),(9,'1','call ThemCong(\'1\',\'1/1/2019\', \'12\')',0);
+INSERT INTO `yeu_cau` VALUES (8,'1','call ThemCong(\'1\',\'1/1/2019\', \'12\')',1),(9,'1','call ThemCong(\'1\',\'1/1/2019\', \'15\')',0);
 /*!40000 ALTER TABLE `yeu_cau` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-06 21:44:01
+-- Dump completed on 2019-01-07  1:48:21
