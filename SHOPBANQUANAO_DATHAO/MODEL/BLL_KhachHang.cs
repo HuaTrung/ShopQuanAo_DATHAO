@@ -23,5 +23,6 @@ namespace MODEL
             return DAL_KhachHang.DAL_TimKhachHangTheoCMND(cmnd);
 
         }
+
     }
 }

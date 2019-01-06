@@ -21,48 +21,55 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="5*" />
-                <RowDefinition Height="5*" />
-            </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="0">
-                <Image  x:Name="_mainPhoto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-			   Source="Images/avatar.jpg"
-			   Opacity="0.8" 
-			   Stretch="UniformToFill"/>
+                <TextBlock>Tên đăng nhập:</TextBlock>
+                <TextBox x:Name="tbTenDangNhap"></TextBox>
+                <TextBlock>Mật khẩu:</TextBlock>
+                <PasswordBox x:Name="tbMatKhau"></PasswordBox>
+                <Button x:Name="btnDangNhap" Click="btnDangNhap_Click">Đăng nhập</Button>
+                <Button x:Name="btnDangXuat" Click="btnDangXuat_Click">Đăng Xuất</Button>
             </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="1">
-                <TextBlock>Thông tin</TextBlock>
-                <TextBlock>Họ và tên: </TextBlock>
-                <TextBlock>Ngày sinh: </TextBlock>
-                <TextBlock>Giới tính:</TextBlock>
-                <TextBlock>Địa chỉ:</TextBlock>
-                <DataGrid AutoGenerateColumns="False" Style="{StaticResource AzureDataGrid}" Height="418" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1084"
-                        x:Name="bangchamcong" ItemsSource="{Binding}" GridLinesVisibility="All"
-                        CanUserResizeRows="False" Margin="10,50,0,0" RowHeight ="40" CanUserAddRows="false">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=id_hanghoa}" Header="THỨ 2" Width="auto"
-                                IsReadOnly="True" />
-                        <DataGridTextColumn Binding="{Binding Path=ten_hanghoa}" Header="THỨ 3" Width="auto"
-                                IsReadOnly="True" />
-                        <DataGridTextColumn Binding="{Binding Path=so_luong}" Header="THỨ 4" Width="auto"
-                                IsReadOnly="True" />
-                        <DataGridTextColumn Binding="{Binding Path=gia_tien}" Header="THỨ 5" Width="auto"
-                                IsReadOnly="True" />
-                        <DataGridTextColumn Binding="{Binding Path=gia_tien}" Header="THỨ 5" Width="auto"
-                                IsReadOnly="True" />
-                        <DataGridTextColumn Binding="{Binding Path=gia_tien}" Header="THỨ 6" Width="auto"
-                                IsReadOnly="True" />
-                        <DataGridTextColumn Binding="{Binding Path=gia_tien}" Header="THỨ 7" Width="auto"
-                                IsReadOnly="True" />
-                        <DataGridTextColumn Binding="{Binding Path=gia_tien}" Header="CHỦ NHẬT" Width="auto"
-                                IsReadOnly="True" />
-                    </DataGrid.Columns>
-                </DataGrid>
+            <StackPanel  x:Name="stackDn" Grid.Row="1" Grid.Column="1" Width="350">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+                <StackPanel Orientation="Horizontal">
+                    <Label>Họ và tên:</Label>
+                    <Label x:Name="tbTen"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label>Ngày sinh:</Label>
+                    <Label x:Name="tbNgaySinh"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label>Giới tính:</Label>
+                    <Label x:Name="tbGioiTinh"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label>Địa chỉ:</Label>
+                    <Label x:Name="tbDiaChia"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label>Chức vụ:</Label>
+                    <Label x:Name="tbMaChucVu"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label>Tên đăng nhập:</Label>
+                    <Label x:Name="tbTDNhap"></Label>
+                </StackPanel>
+                <Label x:Name="tblNgay">Chọn ngày để nhập công</Label>
+                <DatePicker SelectedDateChanged="dpicker_SelectedDateChanged" x:Name="dpicker"/>
+                <Label x:Name="tblGioLam">Số giờ làm</Label>
+                <TextBox x:Name="tbHour"></TextBox>
+                <Button Click="Button_Click">Thêm công</Button>
+                <Label >Mật khẩu mới:</Label>
+                <TextBox x:Name="tbmk"></TextBox>
+                <Button Click="Button_Click_1">Thay mật khẩu</Button>
+
             </StackPanel>
         </Grid>
-        <Canvas Grid.Row="2">
-           
-        </Canvas>
     </Grid>
 </UserControl>

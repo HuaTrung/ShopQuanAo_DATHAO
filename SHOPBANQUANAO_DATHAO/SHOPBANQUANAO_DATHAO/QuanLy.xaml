@@ -14,12 +14,132 @@
         <DockPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#2196F3" d:IsLocked="True">
             <Label FontSize="32" Foreground="white" Content="QUẢN LÍ"/>
         </DockPanel>
-        <dragablz:TabablzControl FixedHeaderCount="3" >
-            <dragablz:TabablzControl.InterTabController>
-                <dragablz:InterTabController />
-            </dragablz:TabablzControl.InterTabController>
+        <TabControl  >
             <TabItem Header="Nhân viên" IsSelected="True">
-                
+                <StackPanel Margin="0,0,0,-170">
+                    <TabControl Height="320">
+                        <TabItem Header="Tìm kiếm">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label>Tên nhân viên:</Label>
+                                    <TextBox TextChanged="search_TextChanged" x:Name="tbTenNv" Width="300"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label>Giới tính:</Label>
+                                    <RadioButton x:Name="gNo" Width="100" VerticalAlignment="Center" GroupName="gender" Content="Không" IsChecked="True"/>
+                                    <RadioButton x:Name="gNa" Width="100" VerticalAlignment="Center" GroupName="gender" Content="Nam" />
+                                    <RadioButton x:Name ="gNu" Width="100" VerticalAlignment="Center" GroupName="gender" Content="Nữ" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label>Địa chỉ:</Label>
+                                    <TextBox TextChanged="search_TextChanged" x:Name="tbDiaChi" Width="300"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label>Ngày sinh:</Label>
+                                    <CheckBox IsThreeState="False" IsChecked="False" x:Name="ckbNgaySinh" />
+                                    <DatePicker x:Name="dpNgaySinh" Width="200" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label>Chức vụ:</Label>
+                                    <Grid Width="25"></Grid>
+                                    <RadioButton x:Name="rNo" VerticalAlignment="Center" GroupName="cv" Content="Không" IsChecked="True"/>
+                                    <Grid Width="25"></Grid>
+                                    <RadioButton x:Name="rNvbh" VerticalAlignment="Center" GroupName="cv" Content="Nhân viên bán hàng" />
+                                    <Grid Width="25"></Grid>
+                                    <RadioButton x:Name="rTk"  VerticalAlignment="Center" GroupName="cv" Content="Thủ kho" />
+                                    <Grid Width="25"></Grid>
+                                    <RadioButton x:Name="rAd"  VerticalAlignment="Center" GroupName="cv" Content="Admin" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label>Tên đăng nhập:</Label>
+                                    <TextBox TextChanged="search_TextChanged" x:Name="tbTenDN" Width="300"/>
+                                </StackPanel>
+                                <Grid Height="30"></Grid>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem Header="Cập nhật">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label>Tên nhân viên:</Label>
+                                    <TextBox TextChanged="search_TextChanged" x:Name="tbuTenNv" Width="300"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label>Giới tính:</Label>
+                                    <RadioButton x:Name="rbNam" Width="100" VerticalAlignment="Center" GroupName="gender" Content="Nam" />
+                                    <RadioButton x:Name="rbNu" Width="100" VerticalAlignment="Center" GroupName="gender" Content="Nữ" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label>Địa chỉ:</Label>
+                                    <TextBox TextChanged="search_TextChanged" x:Name="tbuDiaChi" Width="300"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label>Ngày sinh:</Label>
+                                    <DatePicker x:Name="dpuNgaySinh" Width="200" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label>Chức vụ:</Label>
+                                    <Grid Width="25"></Grid>
+                                    <Grid Width="25"></Grid>
+                                    <RadioButton x:Name="rbnvbh" VerticalAlignment="Center" GroupName="cv" Content="Nhân viên bán hàng" />
+                                    <Grid Width="25"></Grid>
+                                    <RadioButton x:Name="rbad"  VerticalAlignment="Center" GroupName="cv" Content="Admin" />
+                                    <Grid Width="25"></Grid>
+                                    <RadioButton x:Name="rbtk" VerticalAlignment="Center" GroupName="cv" Content="Thủ kho" />
+                                </StackPanel>
+                                <StackPanel x:Name="stktdn" Orientation="Horizontal">
+                                    <Label>Tên đăng nhập:</Label>
+                                    <TextBox TextChanged="search_TextChanged" x:Name="tbuTenDN" Width="130"/>
+                                    <Grid Width="25"></Grid>
+                                    <Label>Mật khẩu: </Label>
+                                    <TextBox x:Name="tbumk" Width="120"></TextBox>
+                                    <Button Click="Button_Click_1">Cập nhật mk</Button>
+                                </StackPanel>
+                                <StackPanel x:Name="stknc" Orientation="Horizontal">
+                                    <Label>Ngày sửa công</Label>
+                                    <DatePicker SelectedDateChanged="dupicker_SelectedDateChanged" Width="300" x:Name="dupicker"/>
+                                </StackPanel>
+                                <StackPanel x:Name="stkhl" Orientation="Horizontal">
+                                    <Label x:Name="tblGioLam">Số giờ làm</Label>
+                                    <TextBox Width="300" x:Name="tbuHour"></TextBox>
+                                    <Grid Width="10"/>
+                                    <Button Click="Button_Click">Cập nhật công</Button>
+                                </StackPanel>
+                                <Grid Height="10"></Grid>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button x:Name="btncapnhat" Click="btnCapNhatNhanVien">Cập nhật</Button>
+                                    <Grid Width="10" />
+                                    <Button x:Name="btnxoa" Click="btnXoaNhanvien">Xóa</Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </TabItem>
+                    </TabControl>
+                    <StackPanel>
+                        <Label FontSize="25" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center">Thông tin nhân viên</Label>
+                        <DataGrid Height="400" x:Name="dgNhanvien" AutoGenerateColumns="False" ItemsSource="{Binding}">
+                            <DataGrid.ItemContainerStyle>
+                                <Style TargetType="DataGridRow">
+                                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick" />
+                                </Style>
+                            </DataGrid.ItemContainerStyle>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Path=id}" Header="MÃ" Width="auto"
+                                IsReadOnly="True" />
+                                <DataGridTextColumn Binding="{Binding Path=ten}" Header="TÊN" Width="auto"
+                                IsReadOnly="True" />
+                                <DataGridTextColumn Binding="{Binding Path=gioitinh}" Header="GIỚI TÍNH" Width="auto"
+                                IsReadOnly="True" />
+                                <DataGridTextColumn Binding="{Binding Path=ngaysinh}" Header="NGÀY SINH" Width="auto"
+                                IsReadOnly="True" />
+                                <DataGridTextColumn Binding="{Binding Path=chucvu}" Header="CHỨC VỤ" Width="auto"
+                                IsReadOnly="True" />
+                                <DataGridTextColumn Binding="{Binding Path=diachi}" Header="ĐỊA CHỈ" Width="auto"
+                                IsReadOnly="True" />
+                                <DataGridTextColumn Binding="{Binding Path=tendangnhap}" Header="TÊN ĐĂNG NHẬP" Width="auto"
+                                IsReadOnly="True" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </StackPanel>
             </TabItem>
             <TabItem Header="Thống kê">
                 <dragablz:TabablzControl FixedHeaderCount="3" >
@@ -35,6 +155,6 @@
                 </dragablz:TabablzControl>
             </TabItem>
             
-        </dragablz:TabablzControl>
+        </TabControl>
     </StackPanel>
 </UserControl>

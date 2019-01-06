@@ -48,6 +48,8 @@
     <Compile Include="BLL_HangHoa.cs" />
     <Compile Include="BLL_HoaDon.cs" />
     <Compile Include="BLL_KhoHang.cs" />
+    <Compile Include="BLL_NhanVien.cs" />
+    <Compile Include="BLL_QuanLy.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="BLL_KhachHang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
