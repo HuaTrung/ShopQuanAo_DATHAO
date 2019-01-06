@@ -39,14 +39,32 @@ namespace SHOPBANQUANAO_DATHAO
             }
         }
 
- 
-
         //raise the relevant event in an appropriate method. Button_Click is just an example
         private void XoaThuoc_Click(object sender, RoutedEventArgs e)
         {
             OnUserControlButtonClick();
             ((Panel)this.Parent).Children.Remove(this);
         }
+        public event EventHandler UserControlTextChanged;
 
+        private void UserControlTextChange()
+        {
+            if (UserControlTextChanged != null)
+            {
+                UserControlTextChanged(this, EventArgs.Empty);
+            }
+        }
+
+        private void SoLuongHang_TextChanged(object sender, TextChangedEventArgs e)
+        { 
+            try { 
+            ThanhTien.Text = (Convert.ToInt32(SoLuongHang.Text) * Convert.ToInt32(DonGia.Text)).ToString();
+            }
+            catch (Exception ex)
+            {
+                ThanhTien.Text = "0";
+            }
+            UserControlTextChange();
+        }
     }
 }

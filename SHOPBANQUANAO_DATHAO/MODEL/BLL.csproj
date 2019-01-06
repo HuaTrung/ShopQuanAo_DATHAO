@@ -44,8 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL_BaoCao.cs" />
     <Compile Include="BLL_HangHoa.cs" />
     <Compile Include="BLL_HoaDon.cs" />
+    <Compile Include="BLL_KhoHang.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="BLL_KhachHang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

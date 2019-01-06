@@ -1,0 +1,125 @@
+﻿<UserControl x:Class="SHOPBANQUANAO_DATHAO.KhoHang"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:local="clr-namespace:SHOPBANQUANAO_DATHAO"
+             mc:Ignorable="d" 
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+              xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+             Width="auto"
+             Height="auto">
+    <StackPanel>
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#2196F3" d:IsLocked="True">
+            <Label FontSize="32" Foreground="white" Content="QUẢN LÍ KHO"/>
+        </DockPanel>
+        <dragablz:TabablzControl FixedHeaderCount="3" >
+            <dragablz:TabablzControl.InterTabController>
+                <dragablz:InterTabController />
+            </dragablz:TabablzControl.InterTabController>
+            <TabItem Header="Kho" IsSelected="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*" />
+                        <RowDefinition Height="9*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel >
+                        <StackPanel>
+                            <Label>Tìm kiếm theo tên:</Label>
+                        </StackPanel>
+                        <StackPanel >
+                            <TextBox x:Name="timkiemtenhanghoa" HorizontalAlignment="Left" Foreground="#1565C0" Height="28" TextWrapping="Wrap" VerticalAlignment="Center" Width="182" FontSize="15" TextChanged="TimKiemHangHoa_TextChanged">
+                                <TextBox.Template>
+                                    <ControlTemplate>
+                                        <Border x:Name="border" BorderBrush="#FF2196F3"
+                                    BorderThickness="1 1 1 1 " Background="white" SnapsToDevicePixels="True">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+                                                <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Grid.Column="0" VerticalContentAlignment="Center" Padding="0,0,0,2"/>
+                                                <Button HorizontalAlignment="Right" Width="25" Grid.Column="1">
+                                                    <Canvas>
+                                                        <iconPacks:PackIconMaterial Kind="Magnify" VerticalAlignment="Center" Foreground="#1565C0" Height="20" Width="20" Canvas.Left="-10" Canvas.Top="-10"/>
+                                                    </Canvas>
+                                                </Button>
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </TextBox.Template>
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label>Tìm kiếm theo mã:</Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBox x:Name="timkiemmahanghoa" HorizontalAlignment="Left" Foreground="#1565C0" Height="28" TextWrapping="Wrap" VerticalAlignment="Center" Width="182" FontSize="15" TextChanged="TimKiemMaHangHoa_TextChanged">
+                                <TextBox.Template>
+                                    <ControlTemplate>
+                                        <Border x:Name="border" BorderBrush="#FF2196F3"
+                                    BorderThickness="1 1 1 1 " Background="white" SnapsToDevicePixels="True">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+                                                <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Grid.Column="0" VerticalContentAlignment="Center" Padding="0,0,0,2"/>
+                                                <Button HorizontalAlignment="Right" Width="25" Grid.Column="1">
+                                                    <Canvas>
+                                                        <iconPacks:PackIconMaterial Kind="Magnify" VerticalAlignment="Center" Foreground="#1565C0" Height="20" Width="20" Canvas.Left="-10" Canvas.Top="-10"/>
+                                                    </Canvas>
+                                                </Button>
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </TextBox.Template>
+                            </TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1">
+                        <DataGrid AutoGenerateColumns="False" Style="{StaticResource AzureDataGrid}" Height="700" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1084"
+                        x:Name="DanhSachHangHoa" ItemsSource="{Binding}" GridLinesVisibility="All"
+                        CanUserResizeRows="False" Margin="10,0,0,0" RowHeight ="40" CanUserAddRows="false">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Path=id_hanghoa}" Header="MÃ HÀNG HÓA" Width="auto"
+                                IsReadOnly="True" />
+                                <DataGridTextColumn Binding="{Binding Path=ten_hanghoa}" Header="TÊN" Width="auto"
+                                IsReadOnly="True" />
+                                <DataGridTextColumn Binding="{Binding Path=so_luong}" Header="SỐ LƯỢNG" Width="auto"
+                                IsReadOnly="True" />
+                                <DataGridTextColumn Binding="{Binding Path=gia_tien}" Header="GIÁ TIỀN" Width="auto"
+                                IsReadOnly="True" />
+                                <DataGridTemplateColumn Header="CHỨC NĂNG" Width="115"
+                                IsReadOnly="True">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Canvas>
+                                                <Button Width="20" Height="20" Background="White" ToolTip="Chỉnh sửa" >
+                                                    <Canvas>
+                                                        <iconPacks:PackIconMaterial Kind="Magnify" VerticalAlignment="Center" Foreground="#1565C0" Height="20" Width="20" Canvas.Left="-10" Canvas.Top="-10"/>
+                                                    </Canvas>
+                                                </Button>
+                                                <Button Width="20" Height="20" Background="White" Canvas.Left="30" ToolTip="Khám bệnh"  >
+                                                    <Canvas>
+                                                        <iconPacks:PackIconMaterial Kind="Magnify" VerticalAlignment="Center" Foreground="#1565C0" Height="20" Width="20" Canvas.Left="-10" Canvas.Top="-10"/>
+                                                    </Canvas>
+                                                </Button>
+                                                <Button Width="20" Height="20" Background="White" Canvas.Left="60" ToolTip="Xóa" >
+                                                    <Canvas>
+                                                        <iconPacks:PackIconMaterial Kind="Magnify" VerticalAlignment="Center" Foreground="#1565C0" Height="20" Width="20" Canvas.Left="-10" Canvas.Top="-10"/>
+                                                    </Canvas>
+                                                </Button>
+                                            </Canvas>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Nhập Kho cũ">
+                <local:NhapKhoCu></local:NhapKhoCu>
+            </TabItem>
+            <TabItem Header="Nhập Kho mới">
+                <local:NhapKhoMoi></local:NhapKhoMoi>
+            </TabItem>
+        </dragablz:TabablzControl>
+    </StackPanel>
+</UserControl>

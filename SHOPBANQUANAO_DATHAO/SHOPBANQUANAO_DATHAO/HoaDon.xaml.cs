@@ -35,6 +35,8 @@ namespace SHOPBANQUANAO_DATHAO
             MatHang mathang = new MatHang(ListHangHoa.Count + 1);
             mathang.UserControlButtonClicked += new
                                EventHandler(Button_Click);
+            mathang.UserControlTextChanged += new
+                         EventHandler(SLText_Changed);
             ListHangHoa.Add(mathang);
             hanghoadangmua.Children.Add(mathang);
             thong_tin_them1.Visibility = Visibility.Collapsed;
@@ -102,6 +104,8 @@ namespace SHOPBANQUANAO_DATHAO
                     mathang.ThanhTien.Text = dongia;
                     mathang.UserControlButtonClicked += new
                                        EventHandler(Button_Click);
+                    mathang.UserControlTextChanged+=new
+                         EventHandler(SLText_Changed);
                     ListHangHoa.Add(mathang);
                     hanghoadangmua.Children.Add(mathang);
                 }
@@ -117,6 +121,8 @@ namespace SHOPBANQUANAO_DATHAO
                 mathang.ThanhTien.Text = dongia;
                 mathang.UserControlButtonClicked += new
                                    EventHandler(Button_Click);
+                mathang.UserControlTextChanged += new
+                        EventHandler(SLText_Changed);
                 ListHangHoa.Add(mathang);
                 hanghoadangmua.Children.Add(mathang);
             }
@@ -133,6 +139,22 @@ namespace SHOPBANQUANAO_DATHAO
             MatHang temp = (MatHang)sender;
             int stt = Convert.ToInt32(temp.STTHang.Text.Substring(0, temp.STTHang.Text.Length-1));
             ListHangHoa.RemoveAt(stt - 1);
+            int tongtien = 0;
+            int stttemp = 1;
+            foreach (var item in ListHangHoa)
+            {
+                if (stttemp > 10)
+                    item.STTHang.Text = stttemp + ".";
+                else
+                    item.STTHang.Text = "0" + stttemp + ".";
+                stttemp++;
+                tongtien += Convert.ToInt32(item.ThanhTien.Text);
+            }
+            tinhtong.Text = tongtien.ToString();
+        }
+
+        private void SLText_Changed(object sender, EventArgs e)
+        {
             int tongtien = 0;
             foreach (var item in ListHangHoa)
             {
@@ -191,7 +213,7 @@ namespace SHOPBANQUANAO_DATHAO
             }
             DTO.HoaDon hoadon = null;
             if (khachhang==null)
-                hoadon = new DTO.HoaDon(null, tinhtong.Text, DateTime.Today.ToString("yyyy-MM-dd"), "1", "1");
+                hoadon = new DTO.HoaDon(null, tinhtong.Text, DateTime.Today.ToString("dd,MM,yyyy"), "1", "1");
             else
                 hoadon = new DTO.HoaDon(khachhang.Cmnd, tinhtong.Text, DateTime.Today.ToString("dd,MM,yyyy"), "1", "1");
             BLL_HoaDon.BLL_LapHoaDon(hoadon, listCTHD);
@@ -205,6 +227,7 @@ namespace SHOPBANQUANAO_DATHAO
             mathang.UserControlButtonClicked += new
                                EventHandler(Button_Click);
             ListHangHoa.Add(mathang);
+            hanghoadangmua.Children.Clear();
             hanghoadangmua.Children.Add(mathang);
             thong_tin_them1.Visibility = Visibility.Collapsed;
             thong_tin_them2.Visibility = Visibility.Collapsed;
@@ -212,6 +235,7 @@ namespace SHOPBANQUANAO_DATHAO
             khachhang = null;
             choPhepThemhang = false;
             hdInputHoTen.SelectedIndex = 0;
+            TaiDanhSachHoaDon();
         }
     }
 }

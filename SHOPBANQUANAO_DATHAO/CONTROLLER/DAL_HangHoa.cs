@@ -88,6 +88,120 @@ namespace CONTROLLER
             }
             return dt;
         }
+
+        public static List<string> DAL_TaiLoaiHang()
+        {
+            List<string> list = new List<string>();
+            try
+            {
+                conn.Open();
+                MySqlCommand Command = new MySqlCommand("call LayDanhSachLoaiHang()", conn);
+                MySqlDataReader myReader = Command.ExecuteReader();
+                while (myReader.Read())
+                {
+                    list.Add(myReader.GetString("ten_loai_hang_hoa"));
+                }
+                conn.Close();
+            }
+            catch (MySqlException ex)
+            {
+
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+            return list;
+        }
+
+        public static List<string> DAL_TaiNhaCungCap()
+        {
+            List<string> list = new List<string>();
+            try
+            {
+                conn.Open();
+                MySqlCommand Command = new MySqlCommand("call LayDanhSachNhaCungCap()", conn);
+                MySqlDataReader myReader = Command.ExecuteReader();
+                while (myReader.Read())
+                {
+                    list.Add(myReader.GetString("ten_nha_cung_cap"));
+                }
+                conn.Close();
+            }
+            catch (MySqlException ex)
+            {
+
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+            return list;
+        }
+
+        public static void DAL_ThemNhaCungCap(String text)
+        {
+            try
+            {
+                conn.Open();
+                MySqlCommand Command = new MySqlCommand("insert into nha_cung_cap (ten_nha_cung_cap) values ('" + text + "');", conn);
+                MySqlDataReader myReader = Command.ExecuteReader();
+                
+                conn.Close();
+            }
+            catch (MySqlException ex)
+            {
+
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
+        public static void DAL_ThemLoaiHangHoa(String text)
+        {
+            try
+            {
+                conn.Open();
+                MySqlCommand Command = new MySqlCommand("insert into loai_hang_hoa (ten_loai_hang_hoa) values ('" + text + "');", conn);
+                MySqlDataReader myReader = Command.ExecuteReader();
+
+                conn.Close();
+            }
+            catch (MySqlException ex)
+            {
+
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
+        public static void DAL_ThemHangHoa(DTO.HangHoa text)
+        {
+            try
+            {
+                conn.Open();
+                MySqlCommand Command = new MySqlCommand("call ThemHangHoa('" 
+                    + text.Ten_hang_hoa + 
+                    "'," + text.Gia_tien +
+                     ",'" + text.Size+
+                      "','" + text.Loai_hang_hoa +
+                       "','" + text.Nha_cung_cap +"');", conn);
+                MySqlDataReader myReader = Command.ExecuteReader();
+
+                conn.Close();
+            }
+            catch (MySqlException ex)
+            {
+
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
+        
     }
 }
 

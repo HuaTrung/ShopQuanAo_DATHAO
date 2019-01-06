@@ -41,7 +41,7 @@ namespace CONTROLLER
             {
                 conn.Open();
                 MySqlCommand Command = null;
-                if (hd == null)
+                if (hd.CmndKhachHang == null)
                 {
                     Command = new MySqlCommand("call KhoiTaoHoaDon('null','"
                        + hd.Tong_tien + "','"

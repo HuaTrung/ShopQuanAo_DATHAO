@@ -35,7 +35,7 @@
                 <Button x:Name="thembenhnhan" Margin="5,2,5,1" Click="thembenhnhan_Click" >
                     <StackPanel Orientation="Horizontal">
                         <iconPacks:PackIconMaterial Kind="Key" VerticalAlignment="Center" Foreground="#707070" Height="22" Width="22"/>
-                        <TextBlock Foreground="white" RenderTransformOrigin="0.155,0.591"><Run Text="Thêm bệnh nhân"/></TextBlock>
+                        <TextBlock Foreground="white" RenderTransformOrigin="0.155,0.591"><Run Text="Lập hóa đơn"/></TextBlock>
                     </StackPanel>
                 </Button>
             </StackPanel>
@@ -108,7 +108,7 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Canvas>
-        <MahApp:Flyout TitleVisibility="Hidden" Grid.Row="0" d:IsHidden="False"  x:Name="frmlaphoadon"  Height="auto" Width="auto" Position="Top" Grid.RowSpan="3" FontSize="13" Visibility="Hidden" >
+        <MahApp:Flyout TitleVisibility="Hidden" Grid.Row="0" d:IsHidden="True"  x:Name="frmlaphoadon"  Height="auto" Width="auto" Position="Top" Grid.RowSpan="3" FontSize="13" Visibility="Hidden" >
             <MahApp:Flyout.Background>
                 <SolidColorBrush Color="#FF252424" Opacity="0.9"/>
             </MahApp:Flyout.Background>

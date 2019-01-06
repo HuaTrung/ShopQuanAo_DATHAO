@@ -18,11 +18,11 @@
             <ColumnDefinition Width="0.8*"/>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="STTHang" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" FontSize="14"/>
-        <TextBox x:Name="tenHang" Foreground="Black" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" FontSize="14" FontFamily="Arial" Margin="5,0,5,0" TextWrapping="Wrap"/>
-        <TextBox x:Name="SoLuongHang" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="Black" Grid.Column="2" FontSize="14" FontFamily="Arial" Margin="5,0,5,0"/>
-        <TextBox x:Name="DonGia" HorizontalAlignment="Stretch" Foreground="Black" Grid.Column="3" VerticalAlignment="Center" Margin="5,0,5,0"/>
-        <TextBox x:Name="ThanhTien" HorizontalAlignment="Stretch" Foreground="Black" Grid.Column="4" VerticalAlignment="Center" Margin="5,0,5,0"/>
-        <Button x:Name="XoaThuoc" Grid.Column="5" Height="15" Width="15" ToolTip="Thêm Thuốc" Click="XoaThuoc_Click" Padding="-1000" >
+        <TextBlock x:Name="tenHang" Foreground="Black" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" FontSize="14" FontFamily="Arial" Margin="5,0,5,0" TextWrapping="Wrap"/>
+        <TextBox x:Name="SoLuongHang" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="Black" Grid.Column="2" FontSize="14" FontFamily="Arial" Margin="5,0,5,0" TextChanged="SoLuongHang_TextChanged"/>
+        <TextBlock x:Name="DonGia" HorizontalAlignment="Stretch" Foreground="Black" Grid.Column="3" VerticalAlignment="Center" Margin="5,0,5,0"/>
+        <TextBlock x:Name="ThanhTien" HorizontalAlignment="Stretch" Foreground="Black" Grid.Column="4" VerticalAlignment="Center" Margin="5,0,5,0"/>
+        <Button x:Name="XoaThuoc" Grid.Column="5" Height="15" Width="15" ToolTip="Thêm hàng" Click="XoaThuoc_Click" Padding="-1000" >
             <StackPanel>
                 <iconPacks:PackIconMaterial Kind="close" Foreground="white" Height="10" Width="10"/>
             </StackPanel>

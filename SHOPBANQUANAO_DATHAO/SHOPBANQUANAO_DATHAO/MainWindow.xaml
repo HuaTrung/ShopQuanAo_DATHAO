@@ -28,7 +28,7 @@
                     <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="HÀNG HÓA" /></TextBlock>
                 </Canvas>
             </TabItem.Header>
-            <local:HangHoa></local:HangHoa>
+            <local:QuanLy></local:QuanLy>
             </TabItem>
         <TabItem x:Name="HoaDon" VerticalAlignment="Center">
             <TabItem.Header>

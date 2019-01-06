@@ -1,0 +1,94 @@
+﻿<UserControl x:Class="SHOPBANQUANAO_DATHAO.NhapKhoMoi"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:MahApp="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:SHOPBANQUANAO_DATHAO"
+             mc:Ignorable="d" 
+             Width="auto"
+             Height="auto">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="0,10,0,0" FontSize="14" Grid.Row="0" Grid.Column="0" FontWeight="DemiBold"  Text="Tên Hàng Hóa"></TextBlock>
+        <TextBox x:Name="ten" Margin="0,10,0,0" Grid.Row="0" Grid.Column="1" Width="100"></TextBox>
+        <TextBlock Margin="0,10,0,0" Grid.Row="1" Grid.Column="0"  FontSize="14" FontWeight="DemiBold" Text="Gía tiền: "></TextBlock>
+        <TextBox x:Name="giatien" Margin="0,10,0,0" Grid.Row="1" Grid.Column="1"  Width="100"></TextBox>
+        <TextBlock Margin="0,10,0,0" Grid.Row="2" Grid.Column="0"  FontSize="14" FontWeight="DemiBold" Text="Size: "></TextBlock>
+        <ComboBox x:Name="size" Margin="0,10,0,0" Grid.Row="2" Grid.Column="1" >
+            <ComboBoxItem Content="S"></ComboBoxItem>
+            <ComboBoxItem Content="M"></ComboBoxItem>
+            <ComboBoxItem Content="L"></ComboBoxItem>
+            <ComboBoxItem Content="XL"></ComboBoxItem>
+        </ComboBox>
+        <TextBlock Margin="0,10,0,0" Grid.Row="3" Grid.Column="0"  FontSize="14" FontWeight="DemiBold" Text="Loại hàng hóa: "></TextBlock>
+        <ComboBox x:Name="loaihang" Margin="0,10,0,0" IsEditable="True" Grid.Row="3" Grid.Column="1" >
+        </ComboBox>
+        <TextBlock Margin="0,10,0,0" Grid.Row="4" Grid.Column="0"  FontSize="14" FontWeight="DemiBold" Text="Nhà cung cấp: "></TextBlock>
+        <ComboBox x:Name="nhacungcap" IsEditable="True" Margin="0,10,0,0" Grid.Row="4" Grid.Column="1">
+
+        </ComboBox>
+        <StackPanel Margin="10,10,0,0" Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <TextBox x:Name="themloaihang" Foreground="Black" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Center" Width="182" FontSize="15" >
+                <TextBox.Template>
+                    <ControlTemplate>
+                        <Border x:Name="border" BorderBrush="#FF2196F3"
+                                    BorderThickness="1 1 1 1 " Background="white" SnapsToDevicePixels="True">
+                            <Grid>
+                                <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Grid.Column="0" VerticalContentAlignment="Center" Padding="0,0,0,2"/>
+                                <Button x:Name="themloaihangBTN" HorizontalAlignment="Right" Width="25" Height="25" Grid.Column="1" Padding="-100" Click="themloaihangBTN_Click">
+                                    <StackPanel>
+                                        <iconPacks:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Foreground="White" Height="22" Width="22"/>
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+        </StackPanel>
+        <StackPanel Margin="10,10,0,0" Grid.Row="4" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <TextBox x:Name="themnhacungcap" Foreground="Black" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Center" Width="182" FontSize="15" >
+                <TextBox.Template>
+                    <ControlTemplate>
+                        <Border x:Name="border" BorderBrush="#FF2196F3"
+                                    BorderThickness="1 1 1 1 " Background="white" SnapsToDevicePixels="True">
+                            <Grid>
+                                <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Grid.Column="0" VerticalContentAlignment="Center" Padding="0,0,0,2"/>
+                                <Button x:Name="themnhacungcapBTN" HorizontalAlignment="Right" Width="25" Height="25" Grid.Column="1" Padding="-100" Click="themnhacungcapBTN_Click">
+                                    <StackPanel>
+                                        <iconPacks:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Foreground="White" Height="22" Width="22"/>
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+        </StackPanel>
+        <Button x:Name="themHangHoa" Margin="5,10,5,1" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Click="themHangHoa_Click" >
+            <StackPanel Orientation="Horizontal">
+                <iconPacks:PackIconMaterial Foreground="white" Kind="Plus" VerticalAlignment="Center" Height="22" Width="22" Margin="0,0,20,0"/>
+                    <TextBlock Foreground="white" RenderTransformOrigin="0.155,0.591"><Run Text="Thêm mới sản phẩm"/></TextBlock>
+                </StackPanel>
+        </Button>
+    </Grid>
+</UserControl>
