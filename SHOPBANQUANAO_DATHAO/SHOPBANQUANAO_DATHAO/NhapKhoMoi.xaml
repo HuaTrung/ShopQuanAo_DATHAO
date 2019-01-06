@@ -10,6 +10,7 @@
              mc:Ignorable="d" 
              Width="auto"
              Height="auto">
+    <StackPanel>
     <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -91,4 +92,6 @@
                 </StackPanel>
         </Button>
     </Grid>
+        <local:NhapKhoCu></local:NhapKhoCu>
+    </StackPanel>
 </UserControl>

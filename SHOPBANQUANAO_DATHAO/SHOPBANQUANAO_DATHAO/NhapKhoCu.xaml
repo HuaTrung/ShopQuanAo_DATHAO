@@ -23,9 +23,12 @@
                     <TextBlock Margin="10,20,0,0" x:Name="nhNgayNhap" Foreground="Black" FontWeight="Normal" FontSize="14" FontFamily="Arial" Text="Ngày Nhập: "/>
                     <StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
                         <TextBlock Text="ID " Foreground="Black" FontSize="14" FontWeight="Bold"></TextBlock>
-                        <TextBlock Text="| MẶT HÀNG" Foreground="Black"  FontSize="14" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="| MẶT HÀNG" Foreground="Black" Margin="50,0,0,0" FontSize="14" FontWeight="Bold"></TextBlock>
                         <TextBlock Text="| SL" Foreground="Black" Margin="95,0,0,0" FontSize="14" FontWeight="Bold"></TextBlock>
-                        <TextBlock Text="| ĐƠN GIÁ" Foreground="Black" Margin="20,0,0,0" FontSize="14" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="| ĐƠN GIÁ" Foreground="Black" Margin="30,0,0,0" FontSize="14" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="| THÀNH TIỀN" Foreground="Black" Margin="20,0,0,0" FontSize="14" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="| NHÀ CUNG CẤP" Foreground="Black" Margin="20,0,0,0" FontSize="14" FontWeight="Bold"></TextBlock>
+
                     </StackPanel>
                     <StackPanel x:Name="hangNhapKho">
 
@@ -102,7 +105,7 @@
                         x:Name="DanhSachHangHoa" ItemsSource="{Binding}"
                         CanUserResizeRows="False" RowHeight ="40" CanUserAddRows="false" Background="white" MouseDoubleClick="DanhSachHangHoa_MouseDoubleClick">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=id_hanghoa}" Header="MÃ" Width="100"
+                        <DataGridTextColumn Binding="{Binding Path=id_hanghoa}" Header="MÃ" Width="50"
                                 IsReadOnly="True" />
                         <DataGridTextColumn Binding="{Binding Path=ten_hanghoa}" Header="TÊN" Width="200"
                                 IsReadOnly="True" />

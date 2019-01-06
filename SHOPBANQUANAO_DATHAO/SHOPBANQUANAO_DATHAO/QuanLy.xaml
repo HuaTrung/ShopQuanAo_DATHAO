@@ -91,6 +91,7 @@
                                     <Grid Width="25"></Grid>
                                     <Label>Mật khẩu: </Label>
                                     <TextBox x:Name="tbumk" Width="120"></TextBox>
+
                                     <Button x:Name="stktdn" Click="Button_Click_1">Cập nhật mk</Button>
                                 </StackPanel>
                                 <StackPanel x:Name="stknc" Orientation="Horizontal">

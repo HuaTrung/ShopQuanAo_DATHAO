@@ -24,7 +24,7 @@
                         <RowDefinition Height="3*" />
                         <RowDefinition Height="9*" />
                     </Grid.RowDefinitions>
-                    <StackPanel >
+                    <StackPanel Margin="20,0,0,0">
                         <StackPanel>
                             <Label>Tìm kiếm theo tên:</Label>
                         </StackPanel>
@@ -85,30 +85,6 @@
                                 IsReadOnly="True" />
                                 <DataGridTextColumn Binding="{Binding Path=gia_tien}" Header="GIÁ TIỀN" Width="auto"
                                 IsReadOnly="True" />
-                                <DataGridTemplateColumn Header="CHỨC NĂNG" Width="115"
-                                IsReadOnly="True">
-                                    <DataGridTemplateColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <Canvas>
-                                                <Button Width="20" Height="20" Background="White" ToolTip="Chỉnh sửa" >
-                                                    <Canvas>
-                                                        <iconPacks:PackIconMaterial Kind="Magnify" VerticalAlignment="Center" Foreground="#1565C0" Height="20" Width="20" Canvas.Left="-10" Canvas.Top="-10"/>
-                                                    </Canvas>
-                                                </Button>
-                                                <Button Width="20" Height="20" Background="White" Canvas.Left="30" ToolTip="Khám bệnh"  >
-                                                    <Canvas>
-                                                        <iconPacks:PackIconMaterial Kind="Magnify" VerticalAlignment="Center" Foreground="#1565C0" Height="20" Width="20" Canvas.Left="-10" Canvas.Top="-10"/>
-                                                    </Canvas>
-                                                </Button>
-                                                <Button Width="20" Height="20" Background="White" Canvas.Left="60" ToolTip="Xóa" >
-                                                    <Canvas>
-                                                        <iconPacks:PackIconMaterial Kind="Magnify" VerticalAlignment="Center" Foreground="#1565C0" Height="20" Width="20" Canvas.Left="-10" Canvas.Top="-10"/>
-                                                    </Canvas>
-                                                </Button>
-                                            </Canvas>
-                                        </DataTemplate>
-                                    </DataGridTemplateColumn.CellTemplate>
-                                </DataGridTemplateColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>

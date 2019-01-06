@@ -23,6 +23,7 @@ namespace SHOPBANQUANAO_DATHAO
     {
         public KhoHang()
         {
+           
             InitializeComponent();
             TaiDanhSachHangHoa();
 

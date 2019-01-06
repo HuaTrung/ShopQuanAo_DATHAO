@@ -100,6 +100,7 @@
                         <StackPanel x:Name="frmhoadon" >
                             <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Foreground="Black" FontWeight="Bold" FontSize="22" FontFamily="Times New Roman"><Run Text="SHOP QUẦN ÁO"/></TextBlock>
                             <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" FontSize="22" FontFamily="Times New Roman"><Run Text="DẠ THẢO"/></TextBlock>
+                            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Foreground="Black" HorizontalAlignment="Center" FontSize="15" FontFamily="Times New Roman"><Run Text="107 Nguyễn Du, thành phố Quảng Ngãi"/></TextBlock>
                             <StackPanel Orientation="Horizontal" Margin="10,10,0,0" >
                                 <TextBlock x:Name="hdHoTen" Foreground="Black" FontWeight="Normal" FontSize="14" FontFamily="Arial" Text="Khách hàng: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 <ComboBox x:Name="hdInputHoTen"  SelectedIndex="0" IsEditable="True" Foreground="Black" Width="208" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" FontSize="14" FontFamily="Arial" SelectionChanged="hdInputHoTen_SelectionChanged">
