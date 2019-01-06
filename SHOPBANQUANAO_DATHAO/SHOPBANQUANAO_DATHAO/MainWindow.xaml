@@ -37,7 +37,7 @@
                     <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="HÓA ĐƠN" /></TextBlock>
                 </Canvas>
             </TabItem.Header>
-            <local:HoaDon></local:HoaDon>
+            <local:KhoHang></local:KhoHang>
         </TabItem>
         <TabItem x:Name="nhan_vien" VerticalAlignment="Center">
             <TabItem.Header>
