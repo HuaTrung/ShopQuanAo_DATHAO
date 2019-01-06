@@ -184,4 +184,29 @@ public class DataTransfer
             return data;
         }
     }
+
+    public int ExecuteNonQuerrypRO(string Query)
+    {
+        int data;
+
+        // Khởi tạo 1 đối tượng kết nối
+        // Và lấy đường dẫn tới CSDL
+        using (MySqlConnection Connect = new MySqlConnection(ConnectString))
+        {
+
+            // Mở kết nối
+            Connect.Open();
+
+            // thực thi lệnh trong mysql
+            MySqlCommand Command = new MySqlCommand();
+            Command = new MySqlCommand(Query, Connect);
+            // Thực thi câu lệnh Sql và trả về số dòng được thực hiện
+            data = Command.ExecuteNonQuery();
+
+            // Đóng kết nối
+            Connect.Close();
+
+            return data;
+        }
+    }
 }

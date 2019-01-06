@@ -55,5 +55,10 @@ namespace MODEL
         {
             return DAL_NhanVien.ThemCong(id, date, soGio);
         }
+
+        public static int YeuCauThemCong(String id, String ngay, int soGio)
+        {
+            return DAL_NhanVien.YeuCauThemCong(id, ngay, soGio);
+        }
     }
 }

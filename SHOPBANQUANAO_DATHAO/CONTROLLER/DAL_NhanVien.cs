@@ -84,5 +84,18 @@ namespace CONTROLLER
             }
             return data;
         }
+
+        public static int YeuCauThemCong(String id,String ngay, int soGio)
+        {
+            String query = "call ThemCong('" + id +"','"+ ngay +"', '"+ soGio +"')";
+
+            String q = "insert into yeu_cau(`id_nv`,`noi_dung_query`) values(@id,@q)";
+
+            List<MySqlParameter> DanhSachParameters = new List<MySqlParameter>();
+            DanhSachParameters.Add(new MySqlParameter("@id", id));
+            DanhSachParameters.Add(new MySqlParameter("@q", query));
+            DataTransfer.Instance.ExecuteNonQuerrypRO("call ThemThamSo('" + id + "')");
+            return DataTransfer.Instance.ExecuteNonQuerry(q, DanhSachParameters.ToArray());
+        }
     }
 }

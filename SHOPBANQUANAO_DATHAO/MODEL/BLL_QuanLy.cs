@@ -48,5 +48,18 @@ namespace MODEL
         {
             return DAL_QuanLy.CapNhatMatKhau(id, mk);
         }
+
+        public static int ThemNhanVien(String ten, String ngaysinh, String gioitinh, String diachi,String chucvu, String mk, String tdn)
+        {
+            NhanVien nv = new NhanVien(null,ten,ngaysinh,gioitinh,diachi, chucvu,mk,tdn); 
+            return DAL_QuanLy.ThemNhanVien(nv);
+        }
+
+      
     }
 }
+
+// sửa sp: thủ kho
+// vô tab kiểm kho
+// => kiểm duyệt sp
+// gửi request cho admin

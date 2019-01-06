@@ -205,6 +205,8 @@ namespace SHOPBANQUANAO_DATHAO
             stkhl.IsEnabled = stknc.IsEnabled = stktdn.IsEnabled = true;
             btncapnhat.IsEnabled = true;
             btnxoa.IsEnabled = true;
+            btnthem.IsEnabled = false;
+            rbad.IsEnabled = true;
 
         }
 
@@ -261,6 +263,56 @@ namespace SHOPBANQUANAO_DATHAO
                     }
                 }
             }
+        }
+
+        private void btnthem_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Bạn có muốn thêm nhân viên ?",
+                                        "Confirmation",
+                                        MessageBoxButton.YesNo,
+                                        MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                if (dpuNgaySinh.Text =="" || tbuTenNv.Text.Trim() == "" || tbuDiaChi.Text.Trim() == "" || tbuTenDN.Text.Trim() == "" || tbumk.Text.Trim() == "")
+                {
+                    MessageBox.Show("Xin hãy điền đầy đủ thông tin để thêm nhân viên", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                }
+                else
+                {
+                    String gt = "NAM";
+                    if (rbNu.IsChecked == true)
+                        gt = "NỮ";
+
+                    String cv = "NHÂN VIÊN BÁN HÀNG";
+                    if (rbtk.IsChecked == true)
+                        cv = "THỦ KHO";
+
+                    int i =  BLL_QuanLy.ThemNhanVien(tbuTenNv.Text, dpuNgaySinh.Text, gt, tbuDiaChi.Text, cv, tbumk.Text, tbuTenDN.Text);
+                    if (i == 1)
+                    {
+                        MessageBox.Show("Thêm nhân viên thành công", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                        loadNhanVien();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm nhân viên thất bại", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    }
+                }
+
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            btnthem.IsEnabled = true;
+            btnxoa.IsEnabled = false;
+            btncapnhat.IsEnabled = false;
+            stktdn.IsEnabled = false;
+            stkhl.IsEnabled = false;
+            stknc.IsEnabled = true;
+            idUpdate = "";
+            rbad.IsEnabled = false;
         }
     }
 }

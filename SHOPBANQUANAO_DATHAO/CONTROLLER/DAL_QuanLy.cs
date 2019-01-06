@@ -114,5 +114,11 @@ namespace CONTROLLER
             DanhSachParameters.Add(new MySqlParameter("@mk", mk));
             return DataTransfer.Instance.ExecuteNonQuerry(q, DanhSachParameters.ToArray());
         }
+
+        public static int ThemNhanVien(NhanVien nv)
+        {
+            String q = "call ThemNhanVien ('" + nv.Ten_nhanvien + "','" + nv.Ngay_sinh + "','" + nv.Gioi_tinh + "','" + nv.Dia_chia + "','" + nv.Ma_chuc_vu + "','" + nv.Mat_khau + "','" + nv.Ten_dang_nhap + "')";
+            return DataTransfer.Instance.ExecuteNonQuerrypRO(q);
+        }
     }
 }
