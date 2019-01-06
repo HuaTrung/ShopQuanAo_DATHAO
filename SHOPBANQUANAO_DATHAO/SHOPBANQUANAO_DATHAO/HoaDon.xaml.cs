@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 using System.Data;
 using MODEL;
 using DTO;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+
 namespace SHOPBANQUANAO_DATHAO
 {
     /// <summary>
@@ -92,6 +95,10 @@ namespace SHOPBANQUANAO_DATHAO
                     ListHangHoa[ListHangHoa.Count - 1].tenHang.Text = tenhang;
                     ListHangHoa[ListHangHoa.Count - 1].SoLuongHang.Text = "1";
                     ListHangHoa[ListHangHoa.Count - 1].DonGia.Text = dongia;
+                    ListHangHoa[ListHangHoa.Count - 1].UserControlButtonClicked += new
+                                       EventHandler(Button_Click);
+                    ListHangHoa[ListHangHoa.Count - 1].UserControlTextChanged += new
+                         EventHandler(SLText_Changed);
                     ListHangHoa[ListHangHoa.Count - 1].ThanhTien.Text = dongia;
                 }
                 else
@@ -217,8 +224,21 @@ namespace SHOPBANQUANAO_DATHAO
             else
                 hoadon = new DTO.HoaDon(khachhang.Cmnd, tinhtong.Text, DateTime.Today.ToString("dd,MM,yyyy"), "1", "1");
             BLL_HoaDon.BLL_LapHoaDon(hoadon, listCTHD);
-        }
+            try
+            {
+                printHoaDon();
 
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Không tìm thấy thiết bị in");
+            }
+        }
+        private async Task printHoaDon()
+        {
+            System.Windows.Controls.PrintDialog printDlg = new System.Windows.Controls.PrintDialog();
+            printDlg.PrintVisual(frmlaphoadon, "Hóa đơn");
+        }
         private void huyHoaDon_Click(object sender, RoutedEventArgs e)
         {
             frmlaphoadon.IsOpen = false;

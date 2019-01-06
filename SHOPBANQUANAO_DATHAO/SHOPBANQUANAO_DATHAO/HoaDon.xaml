@@ -6,6 +6,7 @@
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:MahApp="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:local="clr-namespace:SHOPBANQUANAO_DATHAO"
              mc:Ignorable="d" 
              Width="auto"
@@ -108,7 +109,7 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Canvas>
-        <MahApp:Flyout TitleVisibility="Hidden" Grid.Row="0" d:IsHidden="True"  x:Name="frmlaphoadon"  Height="auto" Width="auto" Position="Top" Grid.RowSpan="3" FontSize="13" Visibility="Hidden" >
+        <MahApp:Flyout TitleVisibility="Hidden" Grid.Row="0" x:Name="frmlaphoadon"  Height="auto" Width="auto" Position="Top" Grid.RowSpan="3" FontSize="13" Visibility="Hidden" >
             <MahApp:Flyout.Background>
                 <SolidColorBrush Color="#FF252424" Opacity="0.9"/>
             </MahApp:Flyout.Background>

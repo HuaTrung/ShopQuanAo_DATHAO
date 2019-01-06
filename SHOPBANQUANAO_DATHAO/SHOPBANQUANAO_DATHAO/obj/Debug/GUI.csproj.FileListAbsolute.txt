@@ -161,3 +161,5 @@ E:\github\quan ao\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\ob
 E:\github\quan ao\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\obj\Debug\GUI.csproj.GenerateResource.cache
 E:\github\quan ao\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 E:\github\quan ao\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\obj\Debug\TonKho.g.cs
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\SHOPBANQUANAO_DATHAO\obj\Debug\TonKho.baml

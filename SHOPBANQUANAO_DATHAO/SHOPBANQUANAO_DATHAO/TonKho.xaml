@@ -1,5 +1,5 @@
-﻿<UserControl x:Class="SHOPBANQUANAO_DATHAO.DoanhThu"
-              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<UserControl x:Class="SHOPBANQUANAO_DATHAO.TonKho"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <materialDesign:Card Margin="40" Padding="5">
-                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Foreground="#2196F3" HorizontalAlignment="Center" FontSize="15" Text="BÁO CÁO DOANH THU"/>
+                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Foreground="#2196F3" HorizontalAlignment="Center" FontSize="15" Text="BÁO CÁO TỒN KHO"/>
             </materialDesign:Card>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="50,0,0,0" FontSize="15"  Foreground="#1565C0" FontWeight="DemiBold" VerticalAlignment="Center">Loại báo cáo:</TextBlock>
@@ -49,14 +49,14 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Margin="100,0,0,0" x:Name="loadbaocaodoanhthutheongay" Padding="-100" Height="35" Width="35" ToolTip="XEM DOANH THU" Click="loadbaocaodoanhthutheongay_Click" >
+                <Button Margin="100,0,0,0" x:Name="loadbaocaotonthu" Padding="-100" Height="35" Width="35" ToolTip="XEM DOANH THU" Click="loadbaocaotonthu_Click" >
                     <StackPanel>
-                        <iconPacks:PackIconMaterial Kind="Key" VerticalAlignment="Center" Foreground="white"  Height="22" Width="22"/>
+                        <iconPacks:PackIconMaterial Kind="ChartBar" VerticalAlignment="Center" Foreground="white"  Height="22" Width="22"/>
                     </StackPanel>
                 </Button>
-                <Button Margin="50,0,0,0" x:Name="xuatexcel_doanhthu" Padding="-100" Height="35" Width="35" ToolTip="XUẤT EXCEL" Click="xuatexcel_Click">
+                <Button Margin="50,0,0,0" x:Name="xuatexcel_tonkho" Padding="-100" Height="35" Width="35" ToolTip="XUẤT EXCEL">
                     <StackPanel>
-                        <iconPacks:PackIconMaterial Kind="Key" VerticalAlignment="Center" Foreground="white"  Height="22" Width="22"/>
+                        <iconPacks:PackIconFontAwesome Kind="FileExcelSolid" VerticalAlignment="Center" Foreground="white"  Height="25" Width="25"/>
                     </StackPanel>
                 </Button>
             </StackPanel>

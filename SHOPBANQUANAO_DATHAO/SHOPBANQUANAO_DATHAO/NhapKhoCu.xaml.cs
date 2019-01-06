@@ -74,6 +74,10 @@ namespace SHOPBANQUANAO_DATHAO
                     ListHangHoa[ListHangHoa.Count - 1].stt = ListHangHoa.Count-1;
                     ListHangHoa[ListHangHoa.Count - 1].tenHang.Text = tenhang;
                     ListHangHoa[ListHangHoa.Count - 1].SoLuongHang.Text = "1";
+                    ListHangHoa[ListHangHoa.Count - 1].UserControlButtonClicked += new
+                                      EventHandler(Button_Click);
+                    ListHangHoa[ListHangHoa.Count - 1].UserControlTextChanged += new
+                         EventHandler(SLText_Changed);
                     ListHangHoa[ListHangHoa.Count - 1].DonGia.Text = dongia ;
                     ListHangHoa[ListHangHoa.Count - 1].ThanhTien.Text = dongia;
                 }
