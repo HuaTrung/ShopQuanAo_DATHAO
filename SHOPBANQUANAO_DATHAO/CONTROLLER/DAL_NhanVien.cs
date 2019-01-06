@@ -94,7 +94,7 @@ namespace CONTROLLER
             List<MySqlParameter> DanhSachParameters = new List<MySqlParameter>();
             DanhSachParameters.Add(new MySqlParameter("@id", id));
             DanhSachParameters.Add(new MySqlParameter("@q", query));
-            DataTransfer.Instance.ExecuteNonQuerrypRO("call ThemThamSo('" + id + "')");
+           // DataTransfer.Instance.ExecuteNonQuerrypRO("call ThemThamSo('" + id + "')");
             return DataTransfer.Instance.ExecuteNonQuerry(q, DanhSachParameters.ToArray());
         }
     }

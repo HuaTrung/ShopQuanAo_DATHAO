@@ -39,13 +39,8 @@ namespace SHOPBANQUANAO_DATHAO
 
             foreach (DataRow row in dt.Rows)
             {
-<<<<<<< HEAD
-                string a = row["ngaylap"].ToString();
-                double b = Convert.ToDouble(row["doanhthu"].ToString());//.Substring(0, row["doanhthu"].ToString().Length - 1));
-                valueList.Add(new KeyValuePair<string, double>(row["ngaylap"].ToString(), b));
-=======
+
                 valueList.Add(new KeyValuePair<string, double>(row["ngaylap"].ToString(), Convert.ToDouble(row["doanhthu"].ToString())));
->>>>>>> 76c21a0d23f4e9bf80792b3b73dd890e99b1d222
             }
             pieChart.Title="Báo cáo doanh thu theo tháng" + doanhthu_thang.Text.Substring(doanhthu_thang.Text.Length - 1)+" năm " + doanhthu_nam.Text;
             pieChart.DataContext = valueList;
