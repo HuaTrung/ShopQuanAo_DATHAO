@@ -307,7 +307,7 @@ CREATE TABLE `nhan_vien` (
 
 LOCK TABLES `nhan_vien` WRITE;
 /*!40000 ALTER TABLE `nhan_vien` DISABLE KEYS */;
-INSERT INTO `nhan_vien` VALUES (1,'LÊ XUÂN TIẾN','1/6/2019','NAM','KTX B',1,'tienlx97','tienlx97',0),(2,'HUỲNH MINH TÂN','1/6/2019','NAM','KTX A',1,'tanhm97','tanhm97',0),(3,'BÙI TRƯỜNG THỊNH','1/6/2019','NAM','KTX C',1,'thinhbt97','thinhbt97',0),(4,'HỨA VĨ TRUNG','1/6/2019','NAM','KTX D',2,'trunght97','trunght97',0),(13,'TIEN','1/10/2019','NỮ','ADASD',1,'AAAA','AAAA',0),(14,'TIEN','1/10/2019','NỮ','ADASD',1,'AAAA','AAAA',0),(15,'TIEN','1/10/2019','NỮ','ADASD',1,'AAAA','AAAA',0),(16,'TIEN','1/10/2019','NỮ','ADASD',1,'AAAA','AAAA',0),(17,'aadasasd','1/1/2019','NAM','asdasdasd',2,'asdasd','asdasdasd',0),(18,'1111111','1/1/2019','NAM','asdasdasd',2,'asdasd','asdasdasd',0),(19,'2222','1/7/2019','NỮ','2222',1,'222','222',0),(20,'zz','1/8/2019','NAM','zzzz',1,'zzz','zzz',0);
+INSERT INTO `nhan_vien` VALUES (1,'LÊ XUÂN TIẾN','1/6/2019','NAM','KTX B',2,'tienlx97','tienlx97',0),(2,'HUỲNH MINH TÂN','1/6/2019','NAM','KTX A',1,'tanhm97','tanhm97',0),(3,'BÙI TRƯỜNG THỊNH','1/6/2019','NAM','KTX C',1,'thinhbt97','thinhbt97',0),(4,'HỨA VĨ TRUNG','1/6/2019','NAM','KTX D',2,'trunght97','trunght97',0),(5,'admin','1/6/2019','NỮ','XX',3,'admin','admin',0);
 /*!40000 ALTER TABLE `nhan_vien` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -925,4 +925,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-07  2:08:32
+-- Dump completed on 2019-01-07  2:21:49
