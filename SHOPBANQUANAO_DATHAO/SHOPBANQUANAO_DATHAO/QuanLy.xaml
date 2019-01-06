@@ -92,7 +92,7 @@
                                     <Grid Width="25"></Grid>
                                     <Label>Mật khẩu: </Label>
                                     <TextBox x:Name="tbumk" Width="120"></TextBox>
-                                    <Button Click="Button_Click_1">Cập nhật mk</Button>
+                                    <Button Click="Button_Click_1">Cập nhật mật khẩu</Button>
                                 </StackPanel>
                                 <StackPanel x:Name="stknc" Orientation="Horizontal">
                                     <Label>Ngày sửa công</Label>

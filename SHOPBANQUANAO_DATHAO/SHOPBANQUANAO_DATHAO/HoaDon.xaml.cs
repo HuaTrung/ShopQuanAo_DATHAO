@@ -298,8 +298,11 @@ namespace SHOPBANQUANAO_DATHAO
         }
         private async Task printHoaDon()
         {
-            System.Windows.Controls.PrintDialog printDlg = new System.Windows.Controls.PrintDialog();
-            printDlg.PrintVisual(frmlaphoadon, "Hóa đơn");
+            
+            System.Windows.Controls.PrintDialog printDialog = new System.Windows.Controls.PrintDialog();
+      
+            
+            printDialog.PrintVisual(frmlaphoadon, "Hóa đơn");
         }
         private void huyHoaDon_Click(object sender, RoutedEventArgs e)
         {

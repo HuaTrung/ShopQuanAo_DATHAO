@@ -11,7 +11,7 @@
 
     <!-- your content -->
 
-    <dragablz:TabablzControl FixedHeaderCount="7" TabStripPlacement="Left" RenderTransformOrigin="1.13,0.502">
+    <dragablz:TabablzControl x:Name="menutabcontrol" FixedHeaderCount="7" TabStripPlacement="Left" RenderTransformOrigin="1.13,0.502" SelectionChanged="menutabcontrol_SelectionChanged">
         <dragablz:TabablzControl.ItemContainerStyle>
             <Style TargetType="{x:Type dragablz:DragablzItem}" BasedOn="{StaticResource MaterialDesignDragableTabItemVerticalStyle}">
                 <Setter Property="Width" Value="150" />
@@ -29,8 +29,8 @@
                 </Canvas>
             </TabItem.Header>
             <local:HangHoa></local:HangHoa>
-            </TabItem>
-        <TabItem x:Name="HoaDon" VerticalAlignment="Center">
+        </TabItem>
+        <TabItem x:Name="hoa_don" VerticalAlignment="Center">
             <TabItem.Header>
                 <Canvas>
                     <iconPacks:PackIconFontAwesome Kind="FileInvoiceDollarSolid" VerticalAlignment="Center" Foreground="White" Height="30" Width="30" Canvas.Left="-65" Canvas.Top="-15"/>
@@ -48,10 +48,10 @@
             </TabItem.Header>
             <local:NhanVien></local:NhanVien>
         </TabItem>
-        <TabItem x:Name="thong_ke" VerticalAlignment="Center">
+        <TabItem x:Name="kiem_kho" VerticalAlignment="Center">
             <TabItem.Header>
                 <Canvas>
-                    <iconPacks:PackIconFontAwesome Kind="ChartBarSolid" VerticalAlignment="Center" Foreground="White" Height="30" Width="30" Canvas.Left="-65" Canvas.Top="-15"/>
+                    <iconPacks:PackIconFontAwesome Kind="WarehouseSolid" VerticalAlignment="Center" Foreground="White" Height="30" Width="30" Canvas.Left="-65" Canvas.Top="-15"/>
                     <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="KIỂM KHO" /></TextBlock>
                 </Canvas>
             </TabItem.Header>
@@ -71,6 +71,14 @@
                 <Canvas>
                     <iconPacks:PackIconFontAwesome Kind="CogsSolid" VerticalAlignment="Center" Foreground="White" Height="30" Width="30" Canvas.Left="-65" Canvas.Top="-15"/>
                     <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="THIẾT LẬP" /></TextBlock>
+                </Canvas>
+            </TabItem.Header>
+        </TabItem>
+        <TabItem x:Name="dang_xuat" VerticalAlignment="Center" MouseDown="dang_xuat_MouseDown">
+            <TabItem.Header>
+                <Canvas>
+                    <iconPacks:PackIconFontAwesome Kind="TimesSolid" VerticalAlignment="Center" Foreground="White" Height="30" Width="30" Canvas.Left="-65" Canvas.Top="-15"/>
+                    <TextBlock Canvas.Left="-25" Canvas.Top="-10" Foreground="white" FontSize="17"><Run Text="THOÁT" /></TextBlock>
                 </Canvas>
             </TabItem.Header>
         </TabItem>

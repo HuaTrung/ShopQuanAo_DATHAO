@@ -40,7 +40,7 @@ namespace SHOPBANQUANAO_DATHAO
         }
 
         //raise the relevant event in an appropriate method. Button_Click is just an example
-        private void XoaThuoc_Click(object sender, RoutedEventArgs e)
+        private void XoaHang_Click(object sender, RoutedEventArgs e)
         {
             OnUserControlButtonClick();
             ((Panel)this.Parent).Children.Remove(this);

@@ -51,12 +51,12 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Margin="100,0,0,0" x:Name="loadbaocaodoanhthutheongay" Padding="-100" Height="35" Width="35" ToolTip="XEM DOANH THU" Click="loadbaocaodoanhthutheongay_Click" >
                     <StackPanel>
-                        <iconPacks:PackIconMaterial Kind="Key" VerticalAlignment="Center" Foreground="white"  Height="22" Width="22"/>
+                        <iconPacks:PackIconMaterial Kind="ChartBar" VerticalAlignment="Center" Foreground="white"  Height="22" Width="22"/>
                     </StackPanel>
                 </Button>
                 <Button Margin="50,0,0,0" x:Name="xuatexcel_doanhthu" Padding="-100" Height="35" Width="35" ToolTip="XUẤT EXCEL" Click="xuatexcel_Click">
                     <StackPanel>
-                        <iconPacks:PackIconMaterial Kind="Key" VerticalAlignment="Center" Foreground="white"  Height="22" Width="22"/>
+                        <iconPacks:PackIconFontAwesome Kind="FileExcelSolid" VerticalAlignment="Center" Foreground="white"  Height="25" Width="25"/>
                     </StackPanel>
                 </Button>
             </StackPanel>

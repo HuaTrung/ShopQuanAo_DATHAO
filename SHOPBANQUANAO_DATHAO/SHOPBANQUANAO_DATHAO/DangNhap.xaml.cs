@@ -11,7 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using WpfApplication;
+using MODEL;
 namespace SHOPBANQUANAO_DATHAO
 {
     /// <summary>
@@ -22,6 +23,21 @@ namespace SHOPBANQUANAO_DATHAO
         public DangNhap()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int kqua = BLL_NhanVien.BLL_KiemtraDangNhap(tendangnhap.Text, matkhau.Password);
+            if (kqua > 0)
+            {
+                MainWindow win2 = new MainWindow(kqua);
+                win2.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Sai thông tin đăng nhập");
+            }
         }
     }
 }

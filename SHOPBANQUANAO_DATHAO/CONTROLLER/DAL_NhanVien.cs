@@ -84,5 +84,34 @@ namespace CONTROLLER
             }
             return data;
         }
+
+        public static int DAL_KiemtraDangNhap(String tdn, String mk)
+        {
+            String data = "0";
+            String query = "call KiemTraDangNhap( '" + tdn + "', '" + mk + "')";
+            try
+            {
+                conn.Open();
+                MySqlCommand Command = new MySqlCommand(query, conn);
+                // Command.ExecuteNonQuery();
+
+                MySqlDataReader myReader = Command.ExecuteReader();
+                while (myReader.Read())
+                {
+                    data = myReader.GetString("ma_chuc_vu");
+                }
+                conn.Close();
+            }
+            catch (MySqlException ex)
+            {
+
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+            return Convert.ToInt32(data);
+        }
+        
     }
 }

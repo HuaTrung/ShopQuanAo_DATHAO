@@ -55,5 +55,10 @@ namespace MODEL
         {
             return DAL_NhanVien.ThemCong(id, date, soGio);
         }
+        public static int BLL_KiemtraDangNhap(String tdn,String mk)
+        {
+            return DAL_NhanVien.DAL_KiemtraDangNhap(tdn,mk);
+        }
+        
     }
 }
