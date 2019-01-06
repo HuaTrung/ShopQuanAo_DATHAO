@@ -57,21 +57,40 @@ namespace CONTROLLER
 
         public static int CapNhatNhanVien(NhanVien nv)
         {
+            string qq = 
+                "select idbang_chuc_vu " +
+                "from bang_chuc_vu " +
+                "where bang_chuc_vu.chuc_vu like @mcv";
 
-            String q = 
-                "update nhan_vien " +
-                "set ten_nhanvien=@ten, ngay_sinh = @ngaysinh, gioi_tinh=@gioitinh, dia_chia=@diachi, ten_dang_nhap=@tendangnhap " +
-                "where id_nhanvien=@id";
+            List<MySqlParameter> DanhSachParameters1 = new List<MySqlParameter>();
+            DanhSachParameters1.Add(new MySqlParameter("@mcv", nv.Ma_chuc_vu));
 
-            List<MySqlParameter> DanhSachParameters = new List<MySqlParameter>();
-            DanhSachParameters.Add(new MySqlParameter("@id", nv.Id_nhanvien));
-            DanhSachParameters.Add(new MySqlParameter("@tendangnhap", nv.Ten_dang_nhap));
-            DanhSachParameters.Add(new MySqlParameter("@ten", nv.Ten_nhanvien));
-            DanhSachParameters.Add(new MySqlParameter("@ngaysinh", nv.Ngay_sinh));
-            DanhSachParameters.Add(new MySqlParameter("@gioitinh", nv.Gioi_tinh));
-            DanhSachParameters.Add(new MySqlParameter("@diachi", nv.Dia_chia));
+            DataTable data = DataTransfer.Instance.ExecuteQuerry(qq, DanhSachParameters1.ToArray());
 
-            return DataTransfer.Instance.ExecuteNonQuerry(q, DanhSachParameters.ToArray());
+            if(data.Rows.Count == 1)
+            {
+                String macv = data.Rows[0][0].ToString();
+
+                String q =
+                    "update nhan_vien " +
+                    "set ten_nhanvien=@ten, ma_chuc_vu = @cv, ngay_sinh = @ngaysinh, gioi_tinh=@gioitinh, dia_chia=@diachi, ten_dang_nhap=@tendangnhap " +
+                    "where id_nhanvien=@id";
+
+                List<MySqlParameter> DanhSachParameters = new List<MySqlParameter>();
+                DanhSachParameters.Add(new MySqlParameter("@id", nv.Id_nhanvien));
+                DanhSachParameters.Add(new MySqlParameter("@tendangnhap", nv.Ten_dang_nhap));
+                DanhSachParameters.Add(new MySqlParameter("@ten", nv.Ten_nhanvien));
+                DanhSachParameters.Add(new MySqlParameter("@ngaysinh", nv.Ngay_sinh));
+                DanhSachParameters.Add(new MySqlParameter("@gioitinh", nv.Gioi_tinh));
+                DanhSachParameters.Add(new MySqlParameter("@diachi", nv.Dia_chia));
+                DanhSachParameters.Add(new MySqlParameter("@cv", macv));
+
+                return DataTransfer.Instance.ExecuteNonQuerry(q, DanhSachParameters.ToArray());
+
+            } else
+            {
+                return -1;
+            }
         }
 
         public static int XoaNhanVien(String id)

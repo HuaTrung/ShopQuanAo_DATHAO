@@ -28,9 +28,9 @@ namespace MODEL
         }
 
 
-        public static int CapNhatNhanVien(String id,String ten, String tdn, String ngaysinh, String gioitinh, String diachi)
+        public static int CapNhatNhanVien(String id,String ten, String tdn, String ngaysinh, String gioitinh, String diachi, String chucvu)
         {
-            NhanVien nv = new NhanVien(id, ten, ngaysinh, gioitinh, diachi, null, tdn);
+            NhanVien nv = new NhanVien(id, ten, ngaysinh, gioitinh, diachi,chucvu, tdn);
             return DAL_QuanLy.CapNhatNhanVien(nv);
         }
 

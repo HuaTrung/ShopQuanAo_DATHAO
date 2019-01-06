@@ -36,7 +36,7 @@ namespace SHOPBANQUANAO_DATHAO
             gNa.Checked += btngGenderCheck;
             gNo.Checked += btngGenderCheck;
             gNu.Checked += btngGenderCheck;
-            rAd.Checked += btngGenderCheck;
+           // rAd.Checked += btngGenderCheck;
             rTk.Checked += btngGenderCheck;
             rNo.Checked += btngGenderCheck;
             rNvbh.Checked += btngGenderCheck;
@@ -142,7 +142,13 @@ namespace SHOPBANQUANAO_DATHAO
 
                 if(result == MessageBoxResult.Yes)
                 {
-                    int i = BLL_QuanLy.CapNhatNhanVien(idUpdate, tbuTenNv.Text.Trim(), tbuTenDN.Text.Trim(), dpuNgaySinh.Text, rbNam.IsChecked == true ? "NAM" : "NỮ", tbuDiaChi.Text.Trim());
+                    String a = "THỦ KHO";
+                    if (rbnvbh.IsChecked == true)
+                    {
+                        a = "NHÂN VIÊN BÁN HÀNG";
+                    }
+
+                    int i = BLL_QuanLy.CapNhatNhanVien(idUpdate, tbuTenNv.Text.Trim(), tbuTenDN.Text.Trim(), dpuNgaySinh.Text, rbNam.IsChecked == true ? "NAM" : "NỮ", tbuDiaChi.Text.Trim(),a);
                     if (i == 1)
                     {
                         loadNhanVien();
@@ -200,8 +206,8 @@ namespace SHOPBANQUANAO_DATHAO
             dpuNgaySinh.Text = row["ngaysinh"].ToString();
             if (row["chucvu"].ToString() == "NHÂN VIÊN BÁN HÀNG")
                 rbnvbh.IsChecked = true;
-            else if(row["chucvu"].ToString() == "QUẢN LÍ")
-                rbad.IsChecked = true;
+            //else if(row["chucvu"].ToString() == "QUẢN LÍ")
+            //    rbad.IsChecked = true;
             else
                 rbtk.IsChecked = true;
             tbuDiaChi.Text = row["diachi"].ToString();
@@ -211,7 +217,7 @@ namespace SHOPBANQUANAO_DATHAO
             btncapnhat.IsEnabled = true;
             btnxoa.IsEnabled = true;
             btnthem.IsEnabled = false;
-            rbad.IsEnabled = true;
+            // rbad.IsEnabled = true;
 
         }
 
@@ -317,7 +323,7 @@ namespace SHOPBANQUANAO_DATHAO
             stkhl.IsEnabled = false;
             stknc.IsEnabled = true;
             idUpdate = "";
-            rbad.IsEnabled = false;
+         //   rbad.IsEnabled = false;
         }
 
         private void DataGridRow_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
