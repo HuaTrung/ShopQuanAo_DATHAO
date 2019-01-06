@@ -1,0 +1,13 @@
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\bin\Debug\CONTROLLER.dll
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\bin\Debug\CONTROLLER.pdb
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\bin\Debug\DTO.dll
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\bin\Debug\Google.Protobuf.dll
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\bin\Debug\MySql.Data.dll
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\bin\Debug\DTO.pdb
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\bin\Debug\Google.Protobuf.xml
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\bin\Debug\MySql.Data.xml
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\obj\Debug\CONTROLLER.dll
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\CONTROLLER\obj\Debug\CONTROLLER.pdb

@@ -1,0 +1,5 @@
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\DTO\bin\Debug\DTO.dll
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\DTO\bin\Debug\DTO.pdb
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\DTO\obj\Debug\DTO.dll
+C:\Users\user\Documents\GitHub\ShopQuanAo_DATHAO\SHOPBANQUANAO_DATHAO\DTO\obj\Debug\DTO.pdb

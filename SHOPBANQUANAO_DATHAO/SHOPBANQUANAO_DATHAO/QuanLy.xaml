@@ -14,10 +14,16 @@
         <DockPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#2196F3" d:IsLocked="True">
             <Label FontSize="32" Foreground="white" Content="QUẢN LÍ"/>
         </DockPanel>
-        <TabControl  >
+        <dragablz:TabablzControl FixedHeaderCount="3" >
+            <dragablz:TabablzControl.InterTabController>
+                <dragablz:InterTabController />
+            </dragablz:TabablzControl.InterTabController>
             <TabItem Header="Nhân viên" IsSelected="True">
                 <StackPanel Margin="0,0,0,-170">
-                    <TabControl Height="320">
+                    <dragablz:TabablzControl FixedHeaderCount="2" >
+                        <dragablz:TabablzControl.InterTabController>
+                            <dragablz:InterTabController />
+                        </dragablz:TabablzControl.InterTabController> 
                         <TabItem Header="Tìm kiếm">
                             <StackPanel>
                                 <StackPanel Orientation="Horizontal">
@@ -117,7 +123,7 @@
                                 </StackPanel>
                             </StackPanel>
                         </TabItem>
-                    </TabControl>
+                    </dragablz:TabablzControl>
                     <StackPanel>
                         <Label FontSize="25" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center">Thông tin nhân viên</Label>
                         <DataGrid Height="240" x:Name="dgNhanvien" AutoGenerateColumns="False" ItemsSource="{Binding}">
@@ -180,6 +186,6 @@
                     </DataGrid>
                 </StackPanel>
             </TabItem>
-        </TabControl>
+        </dragablz:TabablzControl>
     </StackPanel>
 </UserControl>
